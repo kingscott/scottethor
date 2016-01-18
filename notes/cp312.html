@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>cp312</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); overflow: auto; background-color: rgb(40, 44, 52); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line,
+.host .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region,
+.host .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .gutter .line-number,
+.host .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line,
+.host .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,
+.host .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right,
+.host .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #abb2bf;
+}
+.comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.entity.name.type {
+  color: #e5c07b;
+}
+.entity.other.inherited-class {
+  color: #98c379;
+}
+.keyword {
+  color: #c678dd;
+}
+.keyword.control {
+  color: #c678dd;
+}
+.keyword.operator {
+  color: #abb2bf;
+}
+.keyword.other.special-method {
+  color: #61afef;
+}
+.keyword.other.unit {
+  color: #d19a66;
+}
+.storage {
+  color: #c678dd;
+}
+.storage.type.annotation,
+.storage.type.primitive {
+  color: #c678dd;
+}
+.storage.modifier.package,
+.storage.modifier.import {
+  color: #abb2bf;
+}
+.constant {
+  color: #d19a66;
+}
+.constant.variable {
+  color: #d19a66;
+}
+.constant.character.escape {
+  color: #56b6c2;
+}
+.constant.numeric {
+  color: #d19a66;
+}
+.constant.other.color {
+  color: #56b6c2;
+}
+.constant.other.symbol {
+  color: #56b6c2;
+}
+.variable {
+  color: #e06c75;
+}
+.variable.interpolation {
+  color: #be5046;
+}
+.variable.parameter {
+  color: #abb2bf;
+}
+.string {
+  color: #98c379;
+}
+.string.regexp {
+  color: #56b6c2;
+}
+.string.regexp .source.ruby.embedded {
+  color: #e5c07b;
+}
+.string.other.link {
+  color: #e06c75;
+}
+.punctuation.definition.comment {
+  color: #5c6370;
+}
+.punctuation.definition.method-parameters,
+.punctuation.definition.function-parameters,
+.punctuation.definition.parameters,
+.punctuation.definition.separator,
+.punctuation.definition.seperator,
+.punctuation.definition.array {
+  color: #abb2bf;
+}
+.punctuation.definition.heading,
+.punctuation.definition.identity {
+  color: #61afef;
+}
+.punctuation.definition.bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.punctuation.definition.italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.punctuation.section.embedded {
+  color: #be5046;
+}
+.punctuation.section.method,
+.punctuation.section.class,
+.punctuation.section.inner-class {
+  color: #abb2bf;
+}
+.support.class {
+  color: #e5c07b;
+}
+.support.type {
+  color: #56b6c2;
+}
+.support.function {
+  color: #56b6c2;
+}
+.support.function.any-method {
+  color: #61afef;
+}
+.entity.name.function {
+  color: #61afef;
+}
+.entity.name.class,
+.entity.name.type.class {
+  color: #e5c07b;
+}
+.entity.name.section {
+  color: #61afef;
+}
+.entity.name.tag {
+  color: #e06c75;
+}
+.entity.other.attribute-name {
+  color: #d19a66;
+}
+.entity.other.attribute-name.id {
+  color: #61afef;
+}
+.meta.class {
+  color: #e5c07b;
+}
+.meta.class.body {
+  color: #abb2bf;
+}
+.meta.method-call,
+.meta.method {
+  color: #abb2bf;
+}
+.meta.definition.variable {
+  color: #e06c75;
+}
+.meta.link {
+  color: #d19a66;
+}
+.meta.require {
+  color: #61afef;
+}
+.meta.selector {
+  color: #c678dd;
+}
+.meta.separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.meta.tag {
+  color: #abb2bf;
+}
+.none {
+  color: #abb2bf;
+}
+.invalid.deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.invalid.illegal {
+  color: #ffffff !important;
+  background-color: #e05252 !important;
+}
+.markup.bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.markup.changed {
+  color: #c678dd;
+}
+.markup.deleted {
+  color: #e06c75;
+}
+.markup.italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.markup.heading .punctuation.definition.heading {
+  color: #61afef;
+}
+.markup.inserted {
+  color: #98c379;
+}
+.markup.list {
+  color: #e06c75;
+}
+.markup.quote {
+  color: #d19a66;
+}
+.markup.raw {
+  color: #98c379;
+}
+.source.cs .keyword.operator {
+  color: #c678dd;
+}
+.source.css .property-name,
+.source.css .property-value {
+  color: #828997;
+}
+.source.css .property-name.support,
+.source.css .property-value.support {
+  color: #abb2bf;
+}
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+}
+.source.gfm .markup.heading {
+  color: #e06c75;
+}
+.source.gfm .markup.link {
+  color: #c678dd;
+}
+.source.gfm .link .entity {
+  color: #61afef;
+}
+.source.ini .keyword.other.definition.ini {
+  color: #e06c75;
+}
+.source.java .storage.modifier.import {
+  color: #e5c07b;
+}
+.source.java .storage.type {
+  color: #e5c07b;
+}
+.source.java-properties .meta.key-pair {
+  color: #e06c75;
+}
+.source.java-properties .meta.key-pair > .punctuation {
+  color: #abb2bf;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json {
+  color: #e06c75;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
+  color: #e06c75;
+}
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
+  color: #98c379;
+}
+.source.json .meta.structure.dictionary.json > .constant.language.json,
+.source.json .meta.structure.array.json > .constant.language.json {
+  color: #56b6c2;
+}
+.source.ruby .constant.other.symbol > .punctuation {
+  color: inherit;
+}
+.source.python .keyword.operator.logical.python {
+  color: #c678dd;
+}
+.source.python .variable.parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1 id="cp312-algorithm-design-and-analysis">CP312 - Algorithm Design and Analysis</h1>
+<p>An algorithm is a sequence of <u>unambiguous</u> instructions to solve a problem.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>problem&nbsp;=&gt;&nbsp;algorithm&nbsp;=&gt;&nbsp;program&nbsp;=&gt;&nbsp;[&nbsp;input&nbsp;=&gt;&nbsp;computer&nbsp;=&gt;&nbsp;output&nbsp;(solution)&nbsp;]</span></span></span></div></pre><p><em>Figure 1.2</em></p>
+<p><em>Note: Some problems may not have an exact solution.</em></p>
+<h3 id="finiteness">Finiteness</h3>
+<p>Terminate after infinite steps.</p>
+<h3 id="definiteness">Definiteness</h3>
+<p>Unambiguous instructions.</p>
+<h3 id="input">Input</h3>
+<p>Valid inputed specified.</p>
+<h3 id="output">Output</h3>
+<p>Prove the output is correct.</p>
+<h3 id="effectiveness">Effectiveness</h3>
+<p>Comparing algorithms to find the one that is more efficient and requires less power to run.</p>
+<h2 id="summary">Summary</h2>
+<p>Algorithms are the core of computer science. There is tonnes of use in developing analytical skill. By studying existing algorithms, you will learn to apply similar techniques to solve new problems.</p>
+<h3 id="methods">Methods</h3>
+<p>We learn methods such as:</p>
+<ul>
+<li>Brute force</li>
+<li>Divide and conquer</li>
+<li>Decrease and conquer</li>
+<li>Transform and conquer</li>
+<li>Greedy approach</li>
+<li>Back tracking and branch and bound</li>
+<li>Space and time trade off</li>
+<li>Dynamic programming <em>(Note: not covered)</em></li>
+</ul>
+<h3 id="different-algorithms">Different Algorithms</h3>
+<ul>
+<li>Searching algorithms - brute force</li>
+<li>Sorting - brute force</li>
+<li>Shortest paths (minimum spanning tree) - greedy</li>
+<li>Primality test</li>
+</ul>
+<hr>
+<h2 id="chapter-1">Chapter 1</h2>
+<h3 id="analysis-of-algorithms">Analysis of Algorithms</h3>
+<p><strong>Correctness</strong></p>
+<ul>
+<li>To prove correctness by using formal methods (math)</li>
+<li>Precondition --execution--&gt; postcondition</li>
+<li>Postconditions do not prove algorithm on its own</li>
+</ul>
+<p><strong>Space Efficiency</strong></p>
+<ul>
+<li>How much memory your program requires</li>
+</ul>
+<p><strong>Time Efficiency</strong></p>
+<ul>
+<li>Also known as complexity of an algorithm</li>
+<li>Look at the input size (n); if input is large, the program will be slower</li>
+<li>The number of basic operations required:</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;=&nbsp;Bop&nbsp;*&nbsp;C(n)</span></span></span></div></pre><p>where <code style="font-family: Fira Mono;">Bop</code> is the time required for a basic operations and <code style="font-family: Fira Mono;">C(n)</code> is the number of basic operations</p>
+<p><strong>Example</strong>: searching an array of 100 elements vs 1000 elements</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Find&nbsp;the&nbsp;number&nbsp;12.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>array&nbsp;=&nbsp;[&nbsp;1,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;3,&nbsp;12,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;6]</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(10)&nbsp;=&nbsp;comparison&nbsp;*&nbsp;C(10)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C(n)&nbsp;=&nbsp;n&nbsp;=&gt;&nbsp;the&nbsp;lower&nbsp;bound</span></span></span></div></pre><p><em>Note:</em> If the array is sorted <code style="font-family: Fira Mono;">C(n)</code> = log<sub>2</sub>(n).</p>
+<ul>
+<li>Check simplicity</li>
+<li>Compare to other algorithms that solve the same problem<ul>
+<li>Lower bound on <code style="font-family: Fira Mono;">C(n)</code> - no matter what solution you have to a certain solution</li>
+</ul>
+</li>
+<li>Optimal - you want to be able to have your algorithm be consistent and it can be optimized when we know the lower bound: <code style="font-family: Fira Mono;">C(n) = a * L(n)</code></li>
+</ul>
+<h2 id="chapter-2">Chapter 2</h2>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;=&nbsp;Bop&nbsp;*&nbsp;C(n)</span></span></span></div></pre><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Input Size</th>
+<th>Basic Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search for a value in an array</td>
+<td>size of the array</td>
+<td>comparison</td>
+</tr>
+<tr>
+<td>Matrix multiplication</td>
+<td><code style="font-family: Fira Mono;">m * n</code></td>
+<td>multiplication</td>
+</tr>
+<tr>
+<td>Spell check</td>
+<td>size of the document + word size</td>
+<td>comparison</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong>  Sequential Search</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>SequentialSearch(A[0,...,n-1],&nbsp;K)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>//&nbsp;searches&nbsp;for&nbsp;a&nbsp;given&nbsp;value&nbsp;in&nbsp;a&nbsp;given&nbsp;array&nbsp;by&nbsp;sequential&nbsp;search</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;//&nbsp;input:&nbsp;an&nbsp;array&nbsp;A[0,...,n-1]&nbsp;and&nbsp;a&nbsp;search&nbsp;key&nbsp;K</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;//&nbsp;output:&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;key&nbsp;K&nbsp;if&nbsp;found</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;A.length;&nbsp;i++)&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>if&nbsp;(A[i]&nbsp;===&nbsp;k)&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>value&nbsp;=&nbsp;i;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>}&nbsp;else&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>value&nbsp;=&nbsp;false;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>}</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>}</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;return&nbsp;value</span></span></span></div></pre><p>Worst case: <code style="font-family: Fira Mono;">n</code> comparisons <br>
+Best case: <code style="font-family: Fira Mono;">1</code> comparison</p>
+<p>Let <code style="font-family: Fira Mono;">p</code> be the probability that the key is in the array. Let <code style="font-family: Fira Mono;">1-p</code> be the probability that the key is not in the array.</p>
+<p>Average case:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;1*p/n&nbsp;+&nbsp;2*p/n&nbsp;+&nbsp;...&nbsp;+&nbsp;10*p/n&nbsp;+&nbsp;(1-p)*n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;p/n&nbsp;*&nbsp;(1&nbsp;+&nbsp;2&nbsp;+&nbsp;...&nbsp;+&nbsp;n)&nbsp;+&nbsp;(1-p)*n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;p/n&nbsp;*&nbsp;(1+n)/2&nbsp;+&nbsp;(1-p)*n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;p*(1+n)/2&nbsp;+&nbsp;(1-p)*n</span></span></span></div></pre><p><strong>Example</strong> Selection Sort</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>for&nbsp;i=1&nbsp;to&nbsp;n</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>swap&nbsp;a[i]&nbsp;with&nbsp;the&nbsp;smallest&nbsp;of&nbsp;a[i]...a[n]</span></span></span></div></pre><p>Best case === worst case === average case.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1&nbsp;+&nbsp;2&nbsp;+&nbsp;3&nbsp;+&nbsp;...&nbsp;+&nbsp;9&nbsp;for&nbsp;10&nbsp;elements</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1&nbsp;+&nbsp;2&nbsp;+&nbsp;3&nbsp;+&nbsp;...&nbsp;+&nbsp;(n-1)&nbsp;for&nbsp;n&nbsp;elements</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C(n)&nbsp;=&nbsp;1&nbsp;+&nbsp;2&nbsp;+&nbsp;3&nbsp;+&nbsp;...&nbsp;+&nbsp;(n-1)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;(1+(n-1)/2)*(n-1)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;n*(n-1)/2&nbsp;=&nbsp;n^2/2&nbsp;-&nbsp;n/2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;c*n^2</span></span></span></div></pre><p>Growth rate for popular sorts:</p>
+<ul>
+<li>Heap sort: <code style="font-family: Fira Mono;">C(n) = c*n*log(n)</code></li>
+<li>Quick sort: <code style="font-family: Fira Mono;">C(n) = c*n^2</code></li>
+<li>Merge sort: <code style="font-family: Fira Mono;">C(n) = c*n*log(n)</code></li>
+<li>Bubble sort: <code style="font-family: Fira Mono;">C(n) = c*n^2</code></li>
+<li>Selection sort: <code style="font-family: Fira Mono;">C(n) = c*n^2</code></li>
+</ul>
+<h3 id="big-oh-notation">Big Oh Notation</h3>
+<p>If <code style="font-family: Fira Mono;">f(n) = Og(n)</code>; <code style="font-family: Fira Mono;">f(n)</code> is bounded above by <code style="font-family: Fira Mono;">g(n)</code> OR <code style="font-family: Fira Mono;">f(n)</code> is not faster than <code style="font-family: Fira Mono;">g(n)</code>.</p>
+<p><strong>Definition</strong></p>
+<p><code style="font-family: Fira Mono;">f(n) in Og(n) iff f(n) &lt;= cg(n)</code> where <code style="font-family: Fira Mono;">c</code> is a constant for all <code style="font-family: Fira Mono;">n &gt;= n0</code>.</p>
+<p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)&nbsp;=&nbsp;10n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>g(n)&nbsp;=&nbsp;n^2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>n^2&nbsp;=&nbsp;10n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>n^2&nbsp;-&nbsp;10n&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>n(n&nbsp;-&nbsp;10)&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>n&nbsp;=&nbsp;0&nbsp;or&nbsp;n&nbsp;=&nbsp;10</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>n0&nbsp;=&nbsp;10,&nbsp;c&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>10n&nbsp;in&nbsp;O(n^2)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>10n&nbsp;is&nbsp;always&nbsp;going&nbsp;to&nbsp;be&nbsp;bounded&nbsp;by&nbsp;n^2.</span></span></span></div></pre><p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)&nbsp;=&nbsp;5n&nbsp;+&nbsp;20</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>g(n)&nbsp;=&nbsp;n</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>5n&nbsp;+&nbsp;20&nbsp;=&nbsp;n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4n&nbsp;=&nbsp;-20</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>n&nbsp;=&nbsp;-5</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>c&nbsp;=&nbsp;100,&nbsp;n0&nbsp;=&nbsp;-5</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>5n&nbsp;+&nbsp;20&nbsp;in&nbsp;O(n)&nbsp;-&gt;&nbsp;5n&nbsp;+&nbsp;20&nbsp;will&nbsp;not&nbsp;grow&nbsp;faster&nbsp;than&nbsp;n.</span></span></span></div></pre><h3 id="big-omega-notation">Big Omega Notation</h3>
+<p><strong>Definition</strong></p>
+<p><code style="font-family: Fira Mono;">f(n) in Ωg(n) iff f(n) &gt;= cg(n)</code> where <code style="font-family: Fira Mono;">c</code> is a constant for all <code style="font-family: Fira Mono;">n &gt;= n0</code>. Ex. <code style="font-family: Fira Mono;">cg(n)</code> is a lower bounded for <code style="font-family: Fira Mono;">f(n)</code>.</p>
+<h3 id="big-theta-notation">Big Theta Notation</h3>
+<p><strong>Definition</strong></p>
+<p><code style="font-family: Fira Mono;">f(n) in ϑg(n) iff f(n) &gt;= c1g(n)</code> and <code style="font-family: Fira Mono;">f(n) &lt;= c2g(n)</code> where c1 and c2 are constants for all <code style="font-family: Fira Mono;">n &gt;= n0</code>. Thus, <code style="font-family: Fira Mono;">f(n)</code> and <code style="font-family: Fira Mono;">g(n)</code> are the same growth rate.</p>
+<h3 id="finding-the-optimal-algorithm">Finding the Optimal Algorithm</h3>
+<p>Find the lower bound for the problem.</p>
+<p><strong>Example</strong> Searching</p>
+<p><code style="font-family: Fira Mono;">lower bound = n (size of the array)</code></p>
+<p>If the algorithm&#39;s growth rate is: <code style="font-family: Fira Mono;">f(n) = ϑg(n)</code> or bounded above by <code style="font-family: Fira Mono;">f(n) in O(n)</code> =&gt; the algorithm is optimal.</p>
+<p><strong>Example</strong></p>
+<p>Given <code style="font-family: Fira Mono;">f(n) = 5n^2 + 2n + 6</code>, drop the constant and smaller terms. For this example we get <code style="font-family: Fira Mono;">f(n) = 5n^2</code>.</p>
+<p><strong>Observation</strong></p>
+<p>Log functions with bases 10, 2, 3 or 6 all share the same growth rate. <code style="font-family: Fira Mono;">loga^b</code> is a constant.</p>
+<p>All polynomials with degree <code style="font-family: Fira Mono;">k</code> belong to the same class.</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">log(n)</code></td>
+<td>binary search</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">n</code></td>
+<td>sequential search</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">n*log(n)</code></td>
+<td>loop/shell sort</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">n^2</code></td>
+<td>selection/bubble sort</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">n^3</code></td>
+<td>matrix multiplication</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">2^n</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">n!</code></td>
+<td>travelling salesman</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong> How to compare the growth rate of two given functions?</p>
+<p><code style="font-family: Fira Mono;">f(n) = 3n^2 + n + 5</code> and <code style="font-family: Fira Mono;">g(n) = 5n^3 + 5n + 6</code></p>
+<p>We are only interested when the input size is large; where large is infinity.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;&nbsp;f(n)&nbsp;/&nbsp;g(n)&nbsp;=&nbsp;lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;(3n^2&nbsp;+&nbsp;n&nbsp;+&nbsp;5)&nbsp;/&nbsp;(5n^3&nbsp;+&nbsp;5n&nbsp;+&nbsp;6)</span></span></span></div></pre><p>There will be three cases: <code style="font-family: Fira Mono;">0</code> or <code style="font-family: Fira Mono;">constant &gt; 0</code> or <code style="font-family: Fira Mono;">inf</code>.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>0&nbsp;=&gt;&nbsp;f(n)&nbsp;in&nbsp;0(g(n))</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;f(n)&nbsp;/&nbsp;g(n)&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constant&nbsp;&gt;&nbsp;0&nbsp;=&gt;&nbsp;f(n)&nbsp;in&nbsp;ϑ(g(n))</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>inf&nbsp;=&gt;&nbsp;f(n)&nbsp;in&nbsp;Ω(g(n))</span></span></span></div></pre><p><strong>Example</strong></p>
+<p><code style="font-family: Fira Mono;">f(n) = 10n</code> and <code style="font-family: Fira Mono;">g(n) = n^2</code>.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;=&nbsp;lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;=&nbsp;10n&nbsp;/&nbsp;n^2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;10/n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0</span></span></span></div></pre><p>Thus <code style="font-family: Fira Mono;">10n in O(n^2)</code>.</p>
+<p><strong>Example</strong></p>
+<p><code style="font-family: Fira Mono;">n(n+1)/2</code> and <code style="font-family: Fira Mono;">n^2</code>.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;n(n+1)/2&nbsp;/&nbsp;n^2&nbsp;=&nbsp;lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;n^2&nbsp;+&nbsp;n&nbsp;/&nbsp;2n^2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;(n^2/2n^2&nbsp;+&nbsp;n/2n^2)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;(1/2&nbsp;+&nbsp;1/2n)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;1/2</span></span></span></div></pre><p>Thus <code style="font-family: Fira Mono;">n(n+1)/2 in ϑ(g(n))</code>.</p>
+<p><strong>Example</strong></p>
+<p><code style="font-family: Fira Mono;">log2(n)</code> and <code style="font-family: Fira Mono;">n</code>. Use L&#39;Hopital&#39;s rule.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;log(n)&nbsp;/&nbsp;n&nbsp;=&nbsp;lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;ð&nbsp;log(n)&nbsp;/&nbsp;ð&nbsp;n</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;lim(n&nbsp;-&gt;&nbsp;inf)&nbsp;1/n*ln2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0</span></span></span></div></pre><p>Thus, <code style="font-family: Fira Mono;">f(n) in O(g(n))</code>. <code style="font-family: Fira Mono;">f(n)</code> is always slower than <code style="font-family: Fira Mono;">g(n)</code>.</p>
+<p><strong>Observations</strong></p>
+<ul>
+<li><code style="font-family: Fira Mono;">f(n) in O(f(n))</code></li>
+<li><code style="font-family: Fira Mono;">f(n) in O(g(n))</code> =&gt; <code style="font-family: Fira Mono;">g(n) in Ω(f(n))</code></li>
+<li>If <code style="font-family: Fira Mono;">f(n) in O(g(n))</code> and <code style="font-family: Fira Mono;">g(n) in O(h(n))</code> then <code style="font-family: Fira Mono;">f(n) in O(h(n))</code></li>
+<li>If <code style="font-family: Fira Mono;">f1(n) in O(g1(n))</code> and <code style="font-family: Fira Mono;">f2(n) in O(g2(n))</code> =&gt; <code style="font-family: Fira Mono;">f1(n) + f2(n) in O(max { g1(n), g2(n) })</code></li>
+</ul>
+<h3 id="analyze-the-time-efficiency-of-non-recursive-algorithms">Analyze the Time Efficiency of Non-Recursive Algorithms</h3>
+<ol>
+<li>Identify the input size</li>
+<li>Identify basic operation</li>
+<li>Determine worst, <s>average</s> and <s>best</s> case for input size n<ul>
+<li>Mainly just look at the worst case, but average can give you an idea ofhow long the algorithm will take</li>
+</ul>
+</li>
+<li>Set up a sum for the number of times the basic operations is executed</li>
+<li>Simplify the sum</li>
+<li>Determine time efficiency class</li>
+</ol>
+<p><strong>Example</strong> Maximum element in array</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>MaxElement(A[0,...,n-1])</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;i&nbsp;&lt;-&nbsp;1&nbsp;to&nbsp;n&nbsp;-&nbsp;1&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>if&nbsp;A[i]&nbsp;&gt;&nbsp;maxVal</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>maxVal&nbsp;&lt;-&nbsp;A[i]</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>return&nbsp;maxVal</span></span></span></div></pre><p>Steps:</p>
+<ol>
+<li>Input size; size of the array n</li>
+<li>Basic operation comparison</li>
+<li>Worst ≡ average ≡ worst</li>
+<li>Setup sum, from i = 0 to n - 1 = (1 + 1 + ... + 1) n-1 times</li>
+<li>Evaluate sum</li>
+</ol>
+<p><strong>Example</strong> Determine whether elements are distinct</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>UniqueElements(A[0,...,n-1])</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;i&nbsp;&lt;-&nbsp;0&nbsp;to&nbsp;n&nbsp;-&nbsp;2&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;j&nbsp;&lt;-&nbsp;i&nbsp;+&nbsp;1&nbsp;to&nbsp;n&nbsp;-&nbsp;1&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>if&nbsp;A[i]&nbsp;=&nbsp;A[j]&nbsp;return&nbsp;false</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>return&nbsp;true</span></span></span></div></pre><p>Steps:</p>
+<ol>
+<li>Input size, number of n elements</li>
+<li>Basic operation comparison</li>
+<li>Worst case, all elements are unique</li>
+<li>Setup the sum from i = 0 to n - 2 and j = i + 1 to n - 1</li>
+<li>Simplify the sum: from i = 0 to n - 2 (n - i - 1); <code style="font-family: Fira Mono;">T(n) in O(n^2)</code></li>
+</ol>
+<p><strong>Example</strong> Matrix multiplication</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>MatriMult(A[0..n&nbsp;-&nbsp;1,&nbsp;0..n&nbsp;-1],&nbsp;B[0..n&nbsp;-&nbsp;1,&nbsp;0..n&nbsp;-&nbsp;1])</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;i&nbsp;&lt;-&nbsp;0&nbsp;to&nbsp;n&nbsp;-&nbsp;1&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;j&nbsp;&lt;-&nbsp;0&nbsp;to&nbsp;n&nbsp;-&nbsp;1&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>C[i,j]&nbsp;&lt;-&nbsp;0.0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;k&nbsp;&lt;-&nbsp;0&nbsp;to&nbsp;n&nbsp;-&nbsp;1&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>C[i,j]&nbsp;&lt;-&nbsp;C[i,j]&nbsp;+&nbsp;A[i,k]&nbsp;*&nbsp;B[k,j]</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>return&nbsp;C</span></span></span></div></pre><p>Turns out to be <code style="font-family: Fira Mono;">n^3</code>.</p>
+<ul>
+<li>1 loop; at least <code style="font-family: Fira Mono;">O(n)</code></li>
+<li>2 loops;</li>
+<li>3 loops;</li>
+</ul>
+<h3 id="analyze-the-time-efficiency-of-recursive-algorithms">Analyze the Time Efficiency of Recursive Algorithms</h3>
+<p><strong>Example</strong> Using <code style="font-family: Fira Mono;">n!</code></p>
+<p>Let <code style="font-family: Fira Mono;">f(n) = n!</code>.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)&nbsp;=&nbsp;f(n-1)&nbsp;*&nbsp;n</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>if&nbsp;(n&nbsp;&gt;&nbsp;1)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>return&nbsp;f(n-1)&nbsp;*&nbsp;n</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>else</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>return&nbsp;1</span></span></span></div></pre><p>Steps:</p>
+<ol>
+<li><strong>Identify input size</strong>: <code style="font-family: Fira Mono;">n</code></li>
+<li><strong>Identify basic operation</strong>: multiplication</li>
+<li><strong>Number of times basic operation is executed in the <u>worst case</u></strong>: 1</li>
+<li><p><strong>Setup a recursive relation and its initial condition</strong>:</p>
+<p>Initial condition: <code style="font-family: Fira Mono;">M(1) = 0</code> <br>
+Recursive relation: <code style="font-family: Fira Mono;">M(n-1) + 1</code></p>
+</li>
+<li><p><strong>Solve the recursive relation</strong>:</p>
+<p>Solve by backward substitution:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;M(n-1)&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;M(n-2)&nbsp;+&nbsp;1&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;M(n-2)&nbsp;+&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;M(n-3)&nbsp;+&nbsp;1&nbsp;+&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;M(n-3)&nbsp;+&nbsp;3</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;M(n-k)&nbsp;+&nbsp;k</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;M(n-(n-1))&nbsp;+&nbsp;n-1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;M(1)&nbsp;+&nbsp;(n-1)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0&nbsp;+&nbsp;n-1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;n-1</span></span></span></div></pre></li>
+<li><p><strong>Determine the time efficiency class</strong>:  <code style="font-family: Fira Mono;">C(n) in ϑ(n)</code></p>
+</li>
+</ol>
+<p><strong>Example</strong> The Towers of Hanoi</p>
+<p>Move rings into other towers, but a bigger ring cannot be on top of a smaller ring.</p>
+<p>Towers in order:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>n&nbsp;&nbsp;&nbsp;&nbsp;n-1&nbsp;&nbsp;&nbsp;&nbsp;n-1</span></span></span></div></pre><ul>
+<li>Move the <code style="font-family: Fira Mono;">n-1</code> disks from source peg to temporary peg.</li>
+<li>Move <code style="font-family: Fira Mono;">nth</code> disk from source to destination peg</li>
+<li>Move <code style="font-family: Fira Mono;">n-1</code> disks from temporary peg to destination peg</li>
+</ul>
+<p>Steps:</p>
+<ol>
+<li><strong>Input size</strong>: <code style="font-family: Fira Mono;">n</code></li>
+<li><strong>Basic operation</strong>: move a disk from one peg to another peg</li>
+<li><p><strong>Number of basic operations</strong>: 1</p>
+</li>
+<li><p><strong>Recursive relation and initial condition</strong>:</p>
+<p>Initial condition: <code style="font-family: Fira Mono;">M(1) = 1</code> <br>
+Recursive relation: <code style="font-family: Fira Mono;">M(n) = 2M(n-1) + 1</code></p>
+</li>
+<li><p><strong>Solve the recursive relation</strong>:</p>
+<p>Solve by backward substitution:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;2M(n-1)&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;2(2M(n-2)&nbsp;+&nbsp;1)&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2^2&nbsp;M(n-2)&nbsp;+&nbsp;2&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2^2&nbsp;(2M(n-3)&nbsp;+&nbsp;1)&nbsp;+&nbsp;2&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2^3&nbsp;M(n-3)&nbsp;+&nbsp;2^2&nbsp;+&nbsp;2&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2^k&nbsp;M(n-k)&nbsp;+&nbsp;2^k-1&nbsp;+&nbsp;...&nbsp;+&nbsp;2^1&nbsp;+&nbsp;2^0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2^n-1&nbsp;M(n-(n-1))&nbsp;+&nbsp;2^n-2&nbsp;+&nbsp;...&nbsp;+&nbsp;2^1&nbsp;+&nbsp;2^0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2^n-1&nbsp;M(1)&nbsp;+&nbsp;2^n-2&nbsp;+&nbsp;2^n-3&nbsp;+&nbsp;...&nbsp;+&nbsp;2^1&nbsp;+&nbsp;2^0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2^n-1&nbsp;+&nbsp;2^n-2&nbsp;+&nbsp;...&nbsp;+&nbsp;2^0</span></span></span></div></pre></li>
+<li><p><strong>Determine the time efficiency class</strong>:</p>
+<p>= <code style="font-family: Fira Mono;">C(n) in O(2^n)</code></p>
+</li>
+</ol>
+<p><em>Note: Counting nodes in a tree -&gt; <code style="font-family: Fira Mono;">2^n - 1</code></em></p>
+<p><strong>Example</strong> Quick sort</p>
+<p>Sort: <code style="font-family: Fira Mono;">1 2 3 4 5 6 7 8 9</code>.</p>
+<p><code style="font-family: Fira Mono;">1</code> is the pivot - 8 comparisons to be done. Now, <code style="font-family: Fira Mono;">2</code> is the pivot - 7 comparisons now. This will go on until the list is sorted.</p>
+<p>Steps:</p>
+<ol>
+<li><strong>Input size</strong>: <code style="font-family: Fira Mono;">n</code></li>
+<li><strong>Basic operation</strong>: comparison</li>
+<li><p><strong>Number of basic operations</strong>:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Sum&nbsp;=&nbsp;(1&nbsp;*&nbsp;(n-1)&nbsp;/&nbsp;2)&nbsp;*&nbsp;(n-1)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;n^2</span></span></span></div></pre><p>Worst case: <code style="font-family: Fira Mono;">n^2</code> comparisons <br>
+Best case: <code style="font-family: Fira Mono;">n*log(n)</code> comparisons</p>
+</li>
+<li><p><strong>Recursive relation and initial condition</strong>:</p>
+<p>Initial condition: <code style="font-family: Fira Mono;">M(1) = 0</code> <br>
+Recursive relation: <code style="font-family: Fira Mono;">M(n) = 2M(n/2) + (n-1)</code></p>
+</li>
+<li><p><strong>Solve the recursive relation</strong>::</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;2M(n/2)&nbsp;+&nbsp;(n-1)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;2(2M(n/2^2)&nbsp;+&nbsp;(n/2&nbsp;-&nbsp;1))&nbsp;+&nbsp;(n-1)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2^2&nbsp;(2M(n/2^3)&nbsp;+&nbsp;(n/2^2&nbsp;-&nbsp;1))&nbsp;+&nbsp;(n&nbsp;-&nbsp;2)&nbsp;+&nbsp;(n&nbsp;-&nbsp;1)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Apply&nbsp;the&nbsp;smoothness&nbsp;rule:&nbsp;let&nbsp;n&nbsp;=&nbsp;2^k&nbsp;-&nbsp;let&nbsp;n&nbsp;be&nbsp;a&nbsp;power&nbsp;of&nbsp;2.&nbsp;(Appendix&nbsp;B)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;2^k-1&nbsp;(2M(n/2^k)&nbsp;+&nbsp;(n/2^k-1&nbsp;-&nbsp;1))&nbsp;+&nbsp;(n&nbsp;-&nbsp;2^k-2)&nbsp;+&nbsp;...&nbsp;+&nbsp;(n&nbsp;-&nbsp;2^1)&nbsp;+&nbsp;(n&nbsp;-&nbsp;2^0)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Remember&nbsp;M(1)&nbsp;=&nbsp;0&nbsp;and&nbsp;n&nbsp;=&nbsp;2^k</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;(n&nbsp;-&nbsp;2^k-2)&nbsp;+&nbsp;(n&nbsp;-&nbsp;2^k-1)&nbsp;+&nbsp;...&nbsp;+&nbsp;(n&nbsp;-&nbsp;2^0)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;k*n&nbsp;-&nbsp;c&nbsp;where&nbsp;k&nbsp;=&nbsp;log2(n)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;n*log(n)</span></span></span></div></pre><p>Solve using Master Theorem:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(1)&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;2M(n/2)&nbsp;+&nbsp;(n-1)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;=&nbsp;a*T(n/b)&nbsp;+&nbsp;f(n)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)&nbsp;=&nbsp;n&nbsp;-&nbsp;1&nbsp;&nbsp;=&gt;&nbsp;f(n)&nbsp;=&nbsp;O(n^1)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;=&nbsp;2&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;=&nbsp;2,&nbsp;b^d&nbsp;=&nbsp;2^1&nbsp;=&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;=&nbsp;b^d</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;in&nbsp;ϑ(n^d&nbsp;*&nbsp;log(n))</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>in&nbsp;ϑ(n&nbsp;*&nbsp;log(n))</span></span></span></div></pre></li>
+<li><p><strong>Determine the time efficiency class</strong>:</p>
+<p>Worst case: <code style="font-family: Fira Mono;">T(n) in O(n^2)</code> <br>
+Best case: <code style="font-family: Fira Mono;">T(n) in O(n log(n))</code></p>
+</li>
+</ol>
+<p><strong>Theorem</strong> Master Theorem</p>
+<p>Let <code style="font-family: Fira Mono;">T(n)</code> be an eventually non-decreasing function that satisfies the recurrence.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;=&nbsp;a*T(n/b)&nbsp;+&nbsp;f(n)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(1)&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>where&nbsp;a&nbsp;&gt;=&nbsp;1,&nbsp;b&nbsp;&gt;=&nbsp;2,&nbsp;c&nbsp;&gt;&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>ϑ(n^d)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;a&nbsp;&lt;&nbsp;b^d</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;in&nbsp;&nbsp;ϑ(n^d&nbsp;*&nbsp;log(n))&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;a&nbsp;=&nbsp;b^d</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>ϑ(n^logb(a))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;a&nbsp;&gt;&nbsp;b^d</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)&nbsp;in&nbsp;O(n^d)&nbsp;where&nbsp;d&nbsp;&gt;=&nbsp;0</span></span></span></div></pre><p><strong>Example</strong> Binary Search</p>
+<p>Given <code style="font-family: Fira Mono;">1 4 7 18 25 30 31 40 41</code>, find <code style="font-family: Fira Mono;">32</code>.</p>
+<p>Since it is sorted, we check <code style="font-family: Fira Mono;">25</code> and beyond.</p>
+<p>Steps:</p>
+<ol>
+<li><strong>Input size</strong>:</li>
+<li><strong>Basic operation</strong>: comparison</li>
+<li><p><strong>Number of basic operations</strong>:</p>
+<p>Worst case:            <br>
+Best case: <code style="font-family: Fira Mono;">M(1) = 1</code></p>
+</li>
+<li><p><strong>Recursive relation and initial condition</strong>:</p>
+<p>Initial condition: <code style="font-family: Fira Mono;">M(1) = 1</code> <br>
+Recursive relation: <code style="font-family: Fira Mono;">M(n) = M(n/2) + 1</code></p>
+</li>
+<li><p><strong>Solve the recursive relation</strong>:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;M(n/2)&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;M(n/2^2&nbsp;+&nbsp;1)&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Apply&nbsp;the&nbsp;smoothness&nbsp;rule,&nbsp;let&nbsp;n&nbsp;=&nbsp;2^k.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;M(n/2^k)&nbsp;+&nbsp;k,&nbsp;where&nbsp;k&nbsp;=&nbsp;n*log2(n)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;1&nbsp;+&nbsp;k</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;log(n)&nbsp;+&nbsp;1</span></span></span></div></pre><p>Solve using the Master Theorem:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;M(n/2)&nbsp;+&nbsp;1&nbsp;where&nbsp;M(1)&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;=&nbsp;a*T(n/b)&nbsp;+&nbsp;f(n)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)&nbsp;=&nbsp;1&nbsp;as&nbsp;f(n)&nbsp;=&nbsp;n^0&nbsp;&nbsp;----&gt;&nbsp;applying&nbsp;Master&nbsp;Theorem</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;d&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;=&nbsp;1,&nbsp;b^d&nbsp;=&nbsp;2^0&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Thus&nbsp;a&nbsp;=&nbsp;b^d</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;in&nbsp;ϑ(n^d*log(n))</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>in&nbsp;ϑ(log(n))</span></span></span></div></pre></li>
+<li><p><strong>Determine the time efficiency class</strong>: <code style="font-family: Fira Mono;">T(n) in O(log(n))</code></p>
+</li>
+</ol>
+<h2 id="chapter-3">Chapter 3</h2>
+<h3 id="brute-force-algorithms">Brute Force Algorithms</h3>
+<p>A straight forward approach to solving a problem, usually directly based on the problem statement and definitions of the concept involved.
+Use of force of the computer instead of a clever approach.</p>
+<p><strong>Example</strong> Find <code style="font-family: Fira Mono;">a^n</code></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;=&nbsp;a&nbsp;*&nbsp;a&nbsp;*&nbsp;...&nbsp;*&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;times</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>power&nbsp;=&nbsp;a</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>for&nbsp;i&nbsp;=&nbsp;1&nbsp;to&nbsp;n&nbsp;-&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>power&nbsp;*=&nbsp;a</span></span></span></div></pre><h4 id="strengths">Strengths</h4>
+<ul>
+<li>Applicable to a wide variety of problems</li>
+<li>For some problems, brute force algorithms yield reasonable algorithms</li>
+<li>A more efficient algorithm may not be justified if the brute force is already fast enough</li>
+<li>Even if the approach is inefficient, it can find the solution for small input size</li>
+<li>Serve as comparison algorithm to other algorithms</li>
+</ul>
+<h4 id="weaknesses">Weaknesses</h4>
+<ul>
+<li>Rarely yields efficient algorithms</li>
+<li>Can be very slower</li>
+<li>May not work if input size is large</li>
+</ul>
+<p><strong>Example</strong> Sorting</p>
+<p>Bubble sort = [2, 1, 8, 7, 4]</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>2&nbsp;-&nbsp;1&nbsp;8&nbsp;7&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1&nbsp;2&nbsp;-&nbsp;8&nbsp;-&nbsp;7&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1&nbsp;2&nbsp;8&nbsp;7&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1&nbsp;2&nbsp;7&nbsp;8&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1&nbsp;2&nbsp;7&nbsp;4&nbsp;8</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>===&nbsp;1&nbsp;pass</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>for&nbsp;i&nbsp;=&nbsp;1&nbsp;to&nbsp;n&nbsp;-&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>killedBullets.forEach(function&nbsp;(bullet)&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>bullets.splice(bullets.indexOf(bullet),&nbsp;1);</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>});</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>//&nbsp;update&nbsp;bullets</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;for&nbsp;(var&nbsp;bullet&nbsp;of&nbsp;bullets)&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>bullet.x&nbsp;+=&nbsp;bullet.vx;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;bullet.y&nbsp;+=&nbsp;bullet.vy;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>}</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;j&nbsp;=&nbsp;1&nbsp;to&nbsp;n&nbsp;-&nbsp;i</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>if&nbsp;A[j]&nbsp;&gt;&nbsp;A[j+1]</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>swap(A[j],&nbsp;A[j+1])</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;in&nbsp;O(n^2)</span></span></span></div></pre><p><strong>Example</strong> String matching</p>
+<p>010011 is given. Find the given string in text.
+Input size: <code style="font-family: Fira Mono;">n + m</code>.
+Basic operation: comparison.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>sum&nbsp;from&nbsp;(i-0&nbsp;to&nbsp;n-m)&nbsp;&nbsp;m&nbsp;(string&nbsp;size)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>=&nbsp;(n-m)*m</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;n*m&nbsp;-&nbsp;m^2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n+m)&nbsp;in&nbsp;O(n*m)</span></span></span></div></pre><p><em>Note: For quiz: 1.1 - 1.3, 2.1 - 2.4.</em></p>
+<p>Other things:</p>
+<ul>
+<li>Appendix B for backwards substitution (p481-482)</li>
+<li>Smoothness rule and Master Theorem (p488-491)</li>
+</ul>
+<p><strong>Example</strong> Closest Pair problem</p>
+<p>2d space -&gt; find which pair is the closest. Ex. Uber taxi service.</p>
+<p>First find distance between all pairs.</p>
+<p>To find the distance:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;sqrt((xa&nbsp;-&nbsp;xb)^2&nbsp;+&nbsp;(ya&nbsp;-&nbsp;yb)^2)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;distance&nbsp;between&nbsp;a&nbsp;and&nbsp;b</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BruteForceClosestPoints(P)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>dmin&nbsp;&lt;-&nbsp;inf</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;for&nbsp;i&nbsp;&lt;-&nbsp;1&nbsp;to&nbsp;n&nbsp;-&nbsp;1&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;j&nbsp;&lt;-&nbsp;i&nbsp;+&nbsp;1&nbsp;to&nbsp;n&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>d&nbsp;&lt;-&nbsp;sqrt((xi&nbsp;-&nbsp;xj)^2&nbsp;+&nbsp;(yi&nbsp;-&nbsp;yj)^2)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;d&nbsp;&lt;&nbsp;dmin</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>dmin&nbsp;&lt;-&nbsp;d;&nbsp;index1&nbsp;&lt;-&nbsp;i;&nbsp;index2&nbsp;&lt;-&nbsp;j</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>return&nbsp;index1,&nbsp;index2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>We&nbsp;know&nbsp;it&#39;s&nbsp;two&nbsp;loops,&nbsp;thus:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;in&nbsp;O(n^2)</span></span></span></div></pre><p>We cannot improve upon this time efficiency with this algorithm. But we can make the algorithm more efficient; since we aren&#39;t looking for the exact distance between the two points, we don&#39;t need to take the square root as we are just interested in the smallest number. This will run a bit faster, but not change our time efficiency class.</p>
+<h4 id="convex-hull-problem">Convex Hull Problem</h4>
+<p>The convex hull, or convex set is the smallest set, of a set <code style="font-family: Fira Mono;">X</code>, containing <code style="font-family: Fira Mono;">X</code>. Given the values of points in a 2d space, sub them into the equation to find the equation of the line (ex. <code style="font-family: Fira Mono;">ax + by + c = 0</code>). In order to determine if the lines lies in the convex hull, check every point and sub into equation.</p>
+<p><strong>Time Efficiency</strong></p>
+<p>For each point it can form <code style="font-family: Fira Mono;">(n-1)</code> point pairs. The total number of pairs is <code style="font-family: Fira Mono;">n(n-1) / 2</code>. Check <code style="font-family: Fira Mono;">(n-2)</code> points for each pairs. The total number of operations: <code style="font-family: Fira Mono;">n(n-1) / 2 * (n-2)</code>. Thus, <code style="font-family: Fira Mono;">T(n) in O(n^3)</code>.</p>
+<h4 id="exhaustive-search-algorithms">Exhaustive Search Algorithms</h4>
+<p>Generate every element of the problem domain and check each element whether it satisfies the given constraint.</p>
+<ul>
+<li>Find the permutation of the input</li>
+<li>Find all subsets of the input</li>
+<li>Find all combinations of the input</li>
+</ul>
+<p><strong>Example</strong> Tic-Tac-Toe</p>
+<p>Brute force algorithm to count all possible outcomes as there aren&#39;t that many (ex. finite set).</p>
+<p><strong>Example</strong> Traveling Salesman Problem</p>
+<p>Find a shortest path that passes through all cities exactly once before returning to the starting city. Basically finding the shortest Hamiltonian circuit.</p>
+<p>List all possibilities.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Think&nbsp;of:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;-----&nbsp;b</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>c&nbsp;-----&nbsp;d</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;d</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;d&nbsp;&nbsp;&nbsp;c</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;d</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;d&nbsp;&nbsp;&nbsp;b</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;&nbsp;&nbsp;d&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;c</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;&nbsp;&nbsp;d&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;b</span></span></span></div></pre><p><strong>Example</strong> Assignment Problem</p>
+<p>Assign <code style="font-family: Fira Mono;">n</code> jobs to <code style="font-family: Fira Mono;">n</code> people.</p>
+<table>
+<thead>
+<tr>
+<th>Person</th>
+<th>Job 1</th>
+<th>Job 2</th>
+<th>Job 3</th>
+<th>Job 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>20</strong></td>
+<td>10</td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td><strong>20</strong></td>
+<td>17</td>
+<td>15</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>15</td>
+<td><strong>18</strong></td>
+<td>10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>15</td>
+<td>15</td>
+<td>20</td>
+<td><strong>15</strong></td>
+</tr>
+</tbody>
+</table>
+<p>We need to minimize cost of assignment.</p>
+<table>
+<thead>
+<tr>
+<th>Person 1</th>
+<th>Person 2</th>
+<th>Person 3</th>
+<th>Person 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Cost of assignment: <code style="font-family: Fira Mono;">20 + 20 + 18 + 15 = 73</code></p>
+<p>Another example cost: <code style="font-family: Fira Mono;">20 + 17 + 15 + 15 = 67</code></p>
+<p>As now, job <code style="font-family: Fira Mono;">n</code> is applied to person <code style="font-family: Fira Mono;">n</code>. Variations of this:</p>
+<table>
+<thead>
+<tr>
+<th>Arrangements</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>....
+<code style="font-family: Fira Mono;">4 x 3 x 2 x 1 = 24</code> different arrangements = <code style="font-family: Fira Mono;">n!</code></p>
+<p>Thus, <code style="font-family: Fira Mono;">T(n) in O(n!)</code>.</p>
+<h2 id="chapter-4">Chapter 4</h2>
+<h3 id="decrease-and-conquer">Decrease and Conquer</h3>
+<ul>
+<li>Reduce problem instance to smaller instance</li>
+<li>Solve smaller instance</li>
+<li>Extend solution of smaller instance to obstain solution to the original problem</li>
+</ul>
+<p><strong>Note</strong>: <em>Indactive or incremental approach</em></p>
+<p><strong>Example</strong> Find <code style="font-family: Fira Mono;">a^n</code></p>
+<ol>
+<li>Decrease by constant (usually by 1)</li>
+</ol>
+<p>Brute force method:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;=&nbsp;a&nbsp;*&nbsp;a&nbsp;*&nbsp;a&nbsp;*&nbsp;...&nbsp;*&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;n&nbsp;times</span></span></span></div></pre><p>Decrease by 1 approach:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a^n&nbsp;=&nbsp;a^n-1&nbsp;*&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)&nbsp;=&nbsp;f(n&nbsp;-&nbsp;1)&nbsp;*&nbsp;a</span></span></span></div></pre><p>Find the recursive relation:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;M(n&nbsp;-&nbsp;1)&nbsp;+&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+1&nbsp;basic&nbsp;operation)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;.</span></span></span></div></pre><ol>
+<li>Decrease by a constant factor</li>
+</ol>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a^n&nbsp;=&nbsp;a^(n/5)&nbsp;*&nbsp;a^(n/5)&nbsp;*&nbsp;a^(n/5)&nbsp;*&nbsp;a^(n/5)&nbsp;*&nbsp;a^(n/5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f(n)&nbsp;=&nbsp;f(n/5)&nbsp;*&nbsp;f(n/5)&nbsp;*&nbsp;f(n/5)&nbsp;*&nbsp;f(n/5)&nbsp;*&nbsp;f(n/5)</span></span></span></div></pre><ul>
+<li>Basic operation is multiplication.</li>
+</ul>
+<p>Recursive relation:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;5&nbsp;M(n/5)&nbsp;+&nbsp;4&nbsp;&nbsp;&nbsp;---&gt;&nbsp;&#39;*&#39;&nbsp;appears&nbsp;4&nbsp;times</span></span></span></div></pre><ol>
+<li>Variable size decrease</li>
+</ol>
+<p><strong>Example</strong> Decrease by 1 - <em>Insertion Sort</em></p>
+<p>To sort an array <code style="font-family: Fira Mono;">A[0, ..., n - 1]</code>, sort array <code style="font-family: Fira Mono;">A[0, ..., n - 2]</code> and then insert <code style="font-family: Fira Mono;">A[n - 1]</code> into the sorted array, <code style="font-family: Fira Mono;">A[0, ..., n - 2]</code>.</p>
+<p>Example:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>6&nbsp;4&nbsp;1&nbsp;8&nbsp;5</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Sort&nbsp;6&nbsp;4&nbsp;1&nbsp;8&nbsp;first.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&gt;&nbsp;1&nbsp;4&nbsp;6&nbsp;8</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Insert&nbsp;5&nbsp;into&nbsp;1&nbsp;4&nbsp;6&nbsp;8</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&gt;&nbsp;1&nbsp;4&nbsp;5&nbsp;6&nbsp;8</span></span></span></div></pre><p>Pseudo function:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>InsertionSort&nbsp;A[0,&nbsp;...,&nbsp;n&nbsp;-&nbsp;1]</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>InsertionSort&nbsp;A[0,&nbsp;...,&nbsp;n&nbsp;-&nbsp;2]</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;Insert&nbsp;A[n&nbsp;-&nbsp;1]&nbsp;into&nbsp;the&nbsp;sorted&nbsp;array:&nbsp;A[0,&nbsp;...,&nbsp;n&nbsp;-&nbsp;2]</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Basic&nbsp;operation:&nbsp;comparison</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Best&nbsp;case:&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recursive&nbsp;relation:&nbsp;M(n)&nbsp;=&nbsp;M(n&nbsp;-&nbsp;1)&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Efficiency:&nbsp;T(n)&nbsp;in&nbsp;O(n)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Worst&nbsp;case:</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recursive&nbsp;relation:&nbsp;M(n)&nbsp;=&nbsp;M(n&nbsp;-&nbsp;1)&nbsp;+&nbsp;(n&nbsp;-&nbsp;1)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Efficiency:&nbsp;T(n)&nbsp;in&nbsp;O(n^2)</span></span></span></div></pre><p><strong>Example</strong> Topological Sorting</p>
+<ul>
+<li>Directed acyclic graph</li>
+<li>Use a matrix to represent graph</li>
+</ul>
+<p>Matrix representation:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>0 (inf)</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>b</td>
+<td>0 (inf)</td>
+<td>0 (inf)</td>
+<td>0 (inf)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>c</td>
+<td>0 (inf)</td>
+<td>0 (inf)</td>
+<td>0 (inf)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>d</td>
+<td>0 (inf)</td>
+<td>0 (inf)</td>
+<td>0 (inf)</td>
+<td>0 (inf)</td>
+</tr>
+</tbody>
+</table>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>n&nbsp;=&nbsp;number&nbsp;of&nbsp;vertices</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>source&nbsp;=&nbsp;a&nbsp;node&nbsp;with&nbsp;no&nbsp;incoming&nbsp;edges</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>TopologicalSort&nbsp;G(n)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Remove&nbsp;a&nbsp;source&nbsp;from&nbsp;G(n)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;TopologicalSort&nbsp;G(n&nbsp;-&nbsp;1)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Basic&nbsp;operation:&nbsp;comparison</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;Recursive&nbsp;relation:&nbsp;M(n)&nbsp;=&nbsp;M(n&nbsp;-&nbsp;1)&nbsp;+&nbsp;(n&nbsp;-&nbsp;1)*n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;efficiency:&nbsp;T(n)&nbsp;in&nbsp;O(n^3)</span></span></span></div></pre><p>Adjacency list comparison:</p>
+<p>Adjacency list:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>a&nbsp;-&gt;&nbsp;b,&nbsp;-&gt;&nbsp;c,&nbsp;-&gt;&nbsp;d</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>b&nbsp;-&gt;&nbsp;d</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>c&nbsp;-&gt;&nbsp;d</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>d</span></span></span></div></pre><p>E = number of edges</p>
+<ul>
+<li>Basic operation: comparison</li>
+<li>Recursive relation: M(n) = M(n - 1) + E</li>
+<li>Time efficiency: T(n) in O(n * E)</li>
+</ul>
+<p><strong>Example</strong> Generating permutations</p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>perms</th>
+<th>number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">n = 1</code></td>
+<td><code style="font-family: Fira Mono;">1</code></td>
+<td><code style="font-family: Fira Mono;">1</code></td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">n = 2</code></td>
+<td><code style="font-family: Fira Mono;">12, 21</code></td>
+<td><code style="font-family: Fira Mono;">2</code></td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">n = 3</code></td>
+<td><code style="font-family: Fira Mono;">123, 132, 312, 321, 231, 213</code></td>
+<td><code style="font-family: Fira Mono;">6</code></td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">n = 4</code></td>
+<td><code style="font-family: Fira Mono;">...</code></td>
+<td><code style="font-family: Fira Mono;">24</code></td>
+</tr>
+</tbody>
+</table>
+<p>Permutation with a minimal chance requirement:</p>
+<ul>
+<li>Recursive relation: <code style="font-family: Fira Mono;">M(n) = M(n - 1) + n</code></li>
+<li>Time efficiency: <code style="font-family: Fira Mono;">T(n) in O(n!)</code></li>
+</ul>
+<p>Find the subset of all given elements.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1.&nbsp;0,&nbsp;{a1}</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>2.&nbsp;0,&nbsp;{a1},&nbsp;{a2},&nbsp;{a1,&nbsp;a2}</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>3.&nbsp;0,&nbsp;{a1},&nbsp;{a2},&nbsp;{a3},&nbsp;{a1,&nbsp;a2},&nbsp;{a2,&nbsp;a3},&nbsp;{a1,&nbsp;a3},&nbsp;{a1,&nbsp;a2,&nbsp;a3}</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>FindAllSubset&nbsp;(n)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>FindAllSubset(n&nbsp;-&nbsp;1)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;Insert&nbsp;n&nbsp;into&nbsp;all&nbsp;subset&nbsp;with&nbsp;n&nbsp;-&nbsp;1&nbsp;elements</span></span></span></div></pre><p>Recursive relation: <code style="font-family: Fira Mono;">M(n - 1) + 2^(n - 1)</code></p>
+<p>Time efficiency: <code style="font-family: Fira Mono;">T(n) in O(2^n)</code></p>
+<p><strong>Decrease by a constant factor</strong> Multiplication a la Russe (Russian peasant method)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;m&nbsp;*&nbsp;n</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(m/2)&nbsp;*&nbsp;2*n</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>if&nbsp;m&nbsp;is&nbsp;odd:</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(m-1&nbsp;/&nbsp;2)&nbsp;*&nbsp;2*n&nbsp;+&nbsp;n</span></span></span></div></pre><p><strong>Example</strong></p>
+<p><code style="font-family: Fira Mono;">65 * 30</code></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(65&nbsp;-&nbsp;1)/2&nbsp;*&nbsp;2*30&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;32&nbsp;*&nbsp;60&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(32/2)&nbsp;*&nbsp;2*60&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;12&nbsp;*&nbsp;120&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(16/2)&nbsp;*&nbsp;2*120&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(8/2)&nbsp;*&nbsp;2*240&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(4/2)&nbsp;*&nbsp;2*480&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;2&nbsp;*&nbsp;960&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(2/2)&nbsp;*&nbsp;2*960&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;1&nbsp;*&nbsp;1920&nbsp;+&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;1950</span></span></span></div></pre><p>Basic operation: <code style="font-family: Fira Mono;">Divide by 2</code></p>
+<p>Recursive relation: <code style="font-family: Fira Mono;">M(n) = M(n/2) + 1</code> -&gt; Solve using Master Theorem.</p>
+<p><strong>Example</strong> Fake Coin Problem</p>
+<p>Assuming that a fake coin does not have the same weight as a real coin. Weigh the coins, and while removing some coins, notice changes in mass.</p>
+<ul>
+<li>Basic operation: mass</li>
+<li>Recursive relation: <code style="font-family: Fira Mono;">M(n) = M(n/2) + 1</code> -&gt; Solve using Master Theorem</li>
+<li>Initial condition: <code style="font-family: Fira Mono;">M(2) = 1</code></li>
+<li>Time efficiency: <code style="font-family: Fira Mono;">T(n) in ϑ(log(n))</code></li>
+</ul>
+<p>Alternatively, we can split the pile into 3.</p>
+<ul>
+<li>Recursive relation becomes: <code style="font-family: Fira Mono;">M(n) = M(n/3) + 1</code> -&gt; Solve using Master Theorem</li>
+<li>Time efficiency: <code style="font-family: Fira Mono;">T(n) in ϑ(log(n))</code></li>
+</ul>
+<p><strong>Example</strong> Find the GCD between two integers. Find the GCD of (80, 44). [Variable size decrease algorithm].</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;GCD(80,&nbsp;44)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;GCD(44,&nbsp;80&nbsp;mod&nbsp;44)&nbsp;&nbsp;=&gt;&nbsp;GCD(44,&nbsp;36)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;GCD(36,&nbsp;44&nbsp;mod&nbsp;36)&nbsp;&nbsp;=&gt;&nbsp;GCD(36,&nbsp;8)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;GCD(8,&nbsp;36&nbsp;mod&nbsp;8)&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;GCD(8,&nbsp;4)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;GCD(4,&nbsp;8&nbsp;mod&nbsp;4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;GCD(4,&nbsp;0)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;4</span></span></span></div></pre><ul>
+<li>Basic operation: remainder (modulo)</li>
+<li>Recursive relation: <code style="font-family: Fira Mono;">M(n) = M(n/2) + 1</code>  -&gt; Solve using Master Theorem</li>
+<li>Time efficiency: <code style="font-family: Fira Mono;">T(n) in O(log(n))</code></li>
+</ul>
+<h2 id="chapter-5">Chapter 5</h2>
+<h3 id="divide-and-conquer">Divide and Conquer</h3>
+<ul>
+<li>Divide instance of problem into 2 or more smaller instances</li>
+<li>Solve smaller instance recursively</li>
+<li>Combining smaller instances to obtain solution for regular problem</li>
+</ul>
+<p><strong>Example</strong> Quick sort</p>
+<p><code style="font-family: Fira Mono;">[ ... ]</code>. An unsorted list and we want to sort it using quick sort.</p>
+<p>We need to pick a pivot</p>
+<p><code style="font-family: Fira Mono;">[ x ... O ... y ]</code>. Our pivot <code style="font-family: Fira Mono;">O</code>. Next, we need to find an element greater than <code style="font-family: Fira Mono;">O</code>, <code style="font-family: Fira Mono;">x</code>, going from left to right; next from right to left, we need to find an element that is less than <code style="font-family: Fira Mono;">O</code>, <code style="font-family: Fira Mono;">y</code>. Now, we can just switch the indices of <code style="font-family: Fira Mono;">x</code> and <code style="font-family: Fira Mono;">y</code>.</p>
+<p><code style="font-family: Fira Mono;">[ lhs &lt; O ... O ... rhs &gt;= O ]</code>. Next use quick sort for sorting the left and right sides of the array.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Quicksort&nbsp;(A[0,&nbsp;...,&nbsp;n-1])</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Partition&nbsp;(A[0,&nbsp;...,&nbsp;n-1])</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Quicksort(lhs)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;Quicksort(rhs)</span></span></span></div></pre><ul>
+<li>Basic operation: comparison</li>
+<li>Number of basic comparison: <code style="font-family: Fira Mono;">n - 1</code></li>
+<li>Recursive relation:<ul>
+<li>Worst case: {
+lhs: 0 elements,
+rhs: n - 1 elements,
+<code style="font-family: Fira Mono;">M(1) = 0</code>,
+<code style="font-family: Fira Mono;">M(2) = 1</code>,
+<code style="font-family: Fira Mono;">M(n) = M(n - 1) + (n - 1)</code>,
+Time efficiency: <code style="font-family: Fira Mono;">T(n) in O(n^2)</code>
+}</li>
+<li>Best case: {
+lhs: ~= n/2 elements,
+rhs: ~= n/2 elements,
+<code style="font-family: Fira Mono;">M(n) = 2*M(n/2) + (n - 1)</code>,   ---&gt; Apply Master Theorem
+Time efficiency: <code style="font-family: Fira Mono;">T(n) in O(n*log(n))</code>
+}</li>
+<li>Average case: {
+<code style="font-family: Fira Mono;">T(n) in O(n*log(n))</code>
+}</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong> Merge sort</p>
+<p><code style="font-family: Fira Mono;">[[ 10, 20, 5, 2 ], [ 6, 16, 9, 8 ]]</code>. Split this list into 2 parts; sort each part and then merge together.</p>
+<p><code style="font-family: Fira Mono;">[ 2, 5, 10, 20 ]</code> and <code style="font-family: Fira Mono;">[ 6, 8, 9, 16 ]</code> ---&gt; merge these</p>
+<ul>
+<li>Number of comparisons: <code style="font-family: Fira Mono;">n - 1</code></li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Mergesort&nbsp;(A[0,&nbsp;...,&nbsp;n&nbsp;-&nbsp;1])</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>copy&nbsp;(A[0&nbsp;..&nbsp;n/2])&nbsp;to&nbsp;B</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;copy&nbsp;(A[n/2&nbsp;+&nbsp;1&nbsp;..&nbsp;n&nbsp;-&nbsp;1])&nbsp;to&nbsp;C</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Mergesort&nbsp;(B[0&nbsp;..&nbsp;n/2])</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;Mergesort&nbsp;(C[n/2&nbsp;+&nbsp;1&nbsp;..&nbsp;n&nbsp;-&nbsp;1])</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Merge(B,&nbsp;C,&nbsp;A)</span></span></span></div></pre><ul>
+<li>Recursive relation:<ul>
+<li><code style="font-family: Fira Mono;">M(1) = 0</code></li>
+<li><code style="font-family: Fira Mono;">M(n) = 2*M(n/2) + (n - 1)</code> ---&gt; Apply Master Theorem</li>
+<li><code style="font-family: Fira Mono;">T(n) in ϑ(n*log(n))</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong> Binary search</p>
+<ul>
+<li>Only when the list is sorted it works</li>
+</ul>
+<p><code style="font-family: Fira Mono;">[ ... O ... ]</code></p>
+<p>target = 52</p>
+<ul>
+<li>target &gt; p<ul>
+<li>can eliminate lhs</li>
+</ul>
+</li>
+<li>target &lt; p<ul>
+<li>can eliminate rhs</li>
+</ul>
+</li>
+<li><p>1 comparison: 1/2 of the list can be eliminated</p>
+</li>
+<li><p>Basic operation: comparison</p>
+</li>
+<li>Recursive relation:<ul>
+<li><code style="font-family: Fira Mono;">M(1) = 1</code></li>
+<li><code style="font-family: Fira Mono;">M(n) = M(n/2) + 1</code>  ---&gt; Apply Master Theorem</li>
+</ul>
+</li>
+<li>Time efficiency: <code style="font-family: Fira Mono;">T(n) in ϑ(log(n))</code></li>
+</ul>
+<p><strong>Example</strong> Multiplying large numbers</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>23456789&nbsp;x</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>12345678</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>----------</span></span></span></div></pre><ul>
+<li><code style="font-family: Fira Mono;">n^2</code> multiplication</li>
+</ul>
+<p><strong>Example</strong> Multiplying Big Numbers</p>
+<ul>
+<li><code style="font-family: Fira Mono;">N</code> digits by <code style="font-family: Fira Mono;">n</code> digits, requiring <code style="font-family: Fira Mono;">n^2</code> multiplications</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>2135&nbsp;*&nbsp;4014</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>a1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;(21&nbsp;*&nbsp;10^2&nbsp;+&nbsp;35)&nbsp;*&nbsp;(40&nbsp;*&nbsp;10^2&nbsp;+&nbsp;14)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;21&nbsp;*&nbsp;40&nbsp;*&nbsp;10^4&nbsp;+&nbsp;(21&nbsp;*&nbsp;14&nbsp;+&nbsp;40&nbsp;*&nbsp;35)&nbsp;*&nbsp;(0^2&nbsp;+&nbsp;35&nbsp;*&nbsp;14)&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;4&nbsp;multiplications</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>a1&nbsp;*&nbsp;b1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;(a1&nbsp;*&nbsp;b2&nbsp;+&nbsp;b2&nbsp;*&nbsp;a2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;a2&nbsp;*&nbsp;b2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;2345&nbsp;/&nbsp;6789&nbsp;*&nbsp;1234&nbsp;/&nbsp;5678</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>a1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>M(n)&nbsp;=&nbsp;4*M(n/2)&nbsp;+&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[addition&nbsp;is&nbsp;not&nbsp;considered&nbsp;basic&nbsp;operation]</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Apply&nbsp;Master&nbsp;Theorem</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>T(n)&nbsp;in&nbsp;O(n^logb(a))&nbsp;=&nbsp;O(n^2)</span></span></span></div></pre><p>Some algorithm, we get: <code style="font-family: Fira Mono;">M(n) = 3*M(n/2) + 0</code> and thus <code style="font-family: Fira Mono;">T(n) in ϑ(n^logb(a)) = ϑ(n^1.538)</code></p>
+<h2 id="chapter-6">Chapter 6</h2>
+<h3 id="transform-and-conquer">Transform and Conquer</h3>
+<ol>
+<li><p>Instance Simplification</p>
+</li>
+<li><p>Transform to a simpler/more convenient instance of the same problem</p>
+</li>
+</ol>
+<p>Example: Find intersection of two lists</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>A&nbsp;=&nbsp;{2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;1,&nbsp;9,&nbsp;8}</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>B&nbsp;=&nbsp;{4,&nbsp;7,&nbsp;6,&nbsp;5,&nbsp;2,&nbsp;8,&nbsp;13}</span></span></span></div></pre><ul>
+<li>Brute force method: compare each element in <code style="font-family: Fira Mono;">A</code> with each element in <code style="font-family: Fira Mono;">B</code></li>
+<li><code style="font-family: Fira Mono;">T(n) in O(n^2)</code></li>
+<li>Transform list A and B to a more convenient instance</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>A&nbsp;becomes&nbsp;{1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;9}</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>B&nbsp;becomes&nbsp;{2,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;13}</span></span></span></div></pre><ul>
+<li>Find their intersection</li>
+<li>Compare elements in <code style="font-family: Fira Mono;">A</code> with elements in <code style="font-family: Fira Mono;">B</code></li>
+<li>In one comparison, we will be able to discard one element of <code style="font-family: Fira Mono;">A</code> or <code style="font-family: Fira Mono;">B</code></li>
+<li>Compare and eliminate the smaller element</li>
+<li><code style="font-family: Fira Mono;">T(n) in O(n*log(n))</code></li>
+</ul>
+<h3 id="horner-s-rule-for-polynomial-evaluation">Horner&#39;s Rule for Polynomial Evaluation</h3>
+<p><code style="font-family: Fira Mono;">an*x^n + an-1 * x^n-1 + ... + a1*x + a0</code></p>
+<p>Ex: <code style="font-family: Fira Mono;">15x^4 + 2x^2 + 5x + 4</code>...</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>if&nbsp;x&nbsp;==&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>we&nbsp;can&nbsp;eval&nbsp;polynomial</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;15&nbsp;+&nbsp;2&nbsp;+&nbsp;5&nbsp;+&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;=&nbsp;26</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>if&nbsp;x&nbsp;==&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>15(2)^4&nbsp;+&nbsp;2(2)^2&nbsp;+&nbsp;5(2)&nbsp;+&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;=&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>{&nbsp;Use&nbsp;the&nbsp;brute&nbsp;force&nbsp;method&nbsp;}</span></span></span></div></pre><h4 id="representation-change">Representation Change</h4>
+<ul>
+<li>Transform to a different representation of the same instance and solve the problem</li>
+</ul>
+<p>Use the same polynomial as before: <code style="font-family: Fira Mono;">15x^4 + 2x^2 + 5x + 4</code></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(1)&nbsp;&nbsp;&nbsp;15&nbsp;*&nbsp;2&nbsp;+&nbsp;0&nbsp;=&nbsp;30</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(2)&nbsp;&nbsp;&nbsp;30&nbsp;*&nbsp;2&nbsp;+&nbsp;2&nbsp;=&nbsp;62</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(3)&nbsp;&nbsp;&nbsp;62&nbsp;*&nbsp;2&nbsp;+&nbsp;5&nbsp;=&nbsp;129</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(4)&nbsp;&nbsp;&nbsp;129&nbsp;*&nbsp;2&nbsp;+&nbsp;4&nbsp;=&nbsp;262</span></span></span></div></pre><p>OR</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>15x^4&nbsp;+&nbsp;0x^3&nbsp;+&nbsp;2x^2&nbsp;+&nbsp;5x&nbsp;+&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;x(15x^3&nbsp;+&nbsp;0x^2&nbsp;+&nbsp;2x&nbsp;+&nbsp;5)&nbsp;+&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;x(x(15x^2&nbsp;+&nbsp;0x&nbsp;+&nbsp;2)&nbsp;+&nbsp;5)&nbsp;+&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;x(x(x(15x&nbsp;+&nbsp;0)&nbsp;+&nbsp;2)&nbsp;+&nbsp;5)&nbsp;+&nbsp;4</span></span></span></div></pre><p>Horner&#39;s rule can also be used to find the quotient and remainder of the division of <code style="font-family: Fira Mono;">P(x)</code> where: <code style="font-family: Fira Mono;">P(x) = x - c</code>.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(15x^4&nbsp;+&nbsp;0x^3&nbsp;+&nbsp;2x^2&nbsp;+&nbsp;5x&nbsp;+&nbsp;4)&nbsp;/&nbsp;(x-2)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=&nbsp;30x^3&nbsp;+&nbsp;62x^2&nbsp;+&nbsp;129x&nbsp;+&nbsp;262</span></span></span></div></pre><h3 id="heap">Heap</h3>
+<ul>
+<li>A heap is a binary tree</li>
+<li>Essentially a complete binary<ul>
+<li>All of its levels full except the leaf level, where only the right most leaves are missing</li>
+<li>The root must have the largest value</li>
+<li>The parents should be greater than their children</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong> Given an array, construct the heap</p>
+<p>Given <code style="font-family: Fira Mono;">[2 9 10 17 18 20 7 8]</code>.</p>
+<p><strong>Bottom Up Method</strong>:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(2)&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(4)17&nbsp;&nbsp;(5)&nbsp;18&nbsp;&nbsp;(6)20&nbsp;&nbsp;(7)&nbsp;7</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>8&nbsp;(8)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>For&nbsp;node&nbsp;i,&nbsp;left&nbsp;child&nbsp;is&nbsp;node&nbsp;2i</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>right&nbsp;child&nbsp;is&nbsp;2i&nbsp;+&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Node&nbsp;i&#39;s&nbsp;parent&nbsp;is&nbsp;Math.floor(i/2)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Sorting:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;**</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>/</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>8</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>18&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;/</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>8</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>/</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>8</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>20</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>18&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;/</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>8</span></span></span></div></pre><p>Steps:</p>
+<ol>
+<li>Transform to a heap</li>
+<li>Sort</li>
+</ol>
+<ul>
+<li>Take the root out and interchange with the last element and then re-do heap</li>
+<li>Height of the tree is <code style="font-family: Fira Mono;">log(n)</code></li>
+<li>2 comparisons to go down a level of the tree</li>
+<li>Worst case: each node will go down to the last level</li>
+<li>Number of comparisons <em> number of levels to go down </em> number of elements in the ith level === <code style="font-family: Fira Mono;">2*(height - i)*2^i</code></li>
+<li><code style="font-family: Fira Mono;">T(n) in O(n)</code></li>
+<li>Sorting: <code style="font-family: Fira Mono;">T(n) in O(n*log(n))</code></li>
+</ul>
+<p><strong>Top Down Method</strong>:</p>
+<p>Given <code style="font-family: Fira Mono;">[2 9 10 17 18 20 7 8]</code>.</p>
+<p>Look at first. Then second and compare. And compare.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>/&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;\</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div></pre><p><code style="font-family: Fira Mono;">n</code> nodes. The height of the tree is <code style="font-family: Fira Mono;">log(n)</code>. The worst case scenario for key insertion is:</p>
+<ul>
+<li>For each node addition, there are <code style="font-family: Fira Mono;">log(n)</code> comparison</li>
+<li><code style="font-family: Fira Mono;">T(n) in O(n*log(n))</code></li>
+</ul>
+<p>Sorting a heap:</p>
+<ul>
+<li>2 comparisons for each level</li>
+<li><code style="font-family: Fira Mono;">2*log(n)</code> comparison for each node</li>
+<li>Thus, <code style="font-family: Fira Mono;">2n*log(n)</code> to sort</li>
+</ul>
+<p>And now we have <code style="font-family: Fira Mono;">T(n) in O(n*log(n))</code>.</p>
+<h3 id="problem-reduction">Problem Reduction</h3>
+<ul>
+<li>Transform to a different problem and solve the transformed problem</li>
+</ul>
+<p>Find the number of paths between two nodes:</p>
+<ul>
+<li>Paths of length 1: <code style="font-family: Fira Mono;">A</code> where <code style="font-family: Fira Mono;">A</code> is a matrix</li>
+<li>Paths of length 2: <code style="font-family: Fira Mono;">A^2</code></li>
+<li>Paths of length 3: <code style="font-family: Fira Mono;">A^3</code> ...</li>
+</ul>
+<h3 id="prestructuring">Prestructuring</h3>
+<ul>
+<li>Preprocessing the input before solving the problem</li>
+<li>Ex: searching a textbook by looking in the index</li>
+<li>The index is a form of preprocessing of the textbook. <code style="font-family: Fira Mono;">O(1)</code> complexity?</li>
+<li>Faster than searching each page of the text <code style="font-family: Fira Mono;">O(n)</code> complexity</li>
+</ul>
+<h3 id="b-tree">B^+ Tree</h3>
+<ul>
+<li>B =&gt; Balanced</li>
+<li>Every leaf node has the same height</li>
+<li>Order <code style="font-family: Fira Mono;">m</code> B+ tree means each node has at least m/2 to m children (except the root)</li>
+<li>At most <code style="font-family: Fira Mono;">m</code> comparisons in tree to find a value</li>
+<li>Leaf nodes always sorted  left to right</li>
+<li>Nodes have keys and pointers that point to their children</li>
+<li>Leaf nodes have pointers directly to a value being looked up</li>
+<li>The structure of a B tree allows us to look-up values in the leaf nodes efficiently</li>
+</ul>
+<p>Looking up values at a given key:</p>
+<ul>
+<li>Compare key looking for to 2 smallest values in root: if smaller go left, if greater go right, if in between go straight</li>
+<li>Continue until at leaf</li>
+</ul>
+<h3 id="hashing">Hashing</h3>
+<ul>
+<li>We use a hashing function find a location to store the info for a value</li>
+<li>Ex <code style="font-family: Fira Mono;">modulus 1000</code></li>
+<li>Go to location of hash value in hash table</li>
+<li><code style="font-family: Fira Mono;">O(1)</code> complexity</li>
+<li>Issue is collision might occur</li>
+<li>Multiple records could have the same hash value</li>
+<li>Can minimize risk of collision with a better hash function</li>
+<li>Space time tradeoff</li>
+<li>Larger table = less search time</li>
+</ul>
+<h3 id="space-for-time-trade-off">Space for Time Trade off</h3>
+<ul>
+<li>Use more <strong>memory space</strong> to speed up the process of finding a solution</li>
+<li>Example: merge sort</li>
+</ul>
+<h4 id="input-enhancement">Input Enhancement</h4>
+<ul>
+<li>Use extra memory space to preprocess the input [or part of input] to store same information to be used later to solve the problem</li>
+</ul>
+<p><strong>Example</strong> Sorting by counting - comparison counting sort</p>
+<p>The last row of numbers contains the number of numbers less than it.</p>
+<ul>
+<li>Go through each element and check how many items are less than it</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>17&nbsp;&nbsp;7&nbsp;&nbsp;8&nbsp;&nbsp;23&nbsp;&nbsp;4&nbsp;&nbsp;5</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>0&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;checking&nbsp;against&nbsp;17</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;checking&nbsp;against&nbsp;7</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;checking&nbsp;against&nbsp;8</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;checking&nbsp;against&nbsp;23</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;checking&nbsp;against&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Now&nbsp;we&nbsp;have:&nbsp;4&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;5&nbsp;&nbsp;0&nbsp;&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>0&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4&nbsp;&nbsp;5&nbsp;&nbsp;7&nbsp;&nbsp;8&nbsp;17&nbsp;&nbsp;23</span></span></span></div></pre><ul>
+<li>Time efficiency: <code style="font-family: Fira Mono;">T(n) in O(n^2)</code></li>
+<li>Time efficiency can be better if we are sorting only a few different values</li>
+</ul>
+<p><strong>Continued Example</strong> Distribution Counting Sort</p>
+<ul>
+<li>Find the frequency of each value in the list and get a frequency list</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>We&nbsp;have:&nbsp;3&nbsp;&nbsp;5&nbsp;&nbsp;2&nbsp;&nbsp;5&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>2&nbsp;&nbsp;3&nbsp;&nbsp;5</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>frequency:&nbsp;[3&nbsp;&nbsp;2&nbsp;&nbsp;2]</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>calculate&nbsp;the&nbsp;distribution&nbsp;list:&nbsp;[3&nbsp;&nbsp;5&nbsp;&nbsp;7]&nbsp;---&gt;&nbsp;add&nbsp;the&nbsp;3&nbsp;+&nbsp;2&nbsp;=&nbsp;5&nbsp;and&nbsp;then&nbsp;5&nbsp;+&nbsp;2&nbsp;=&nbsp;7</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>The&nbsp;distribution&nbsp;list&nbsp;represents&nbsp;the&nbsp;last&nbsp;location&nbsp;upon&nbsp;the&nbsp;original&nbsp;list&nbsp;being&nbsp;sorted.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Start&nbsp;with&nbsp;the&nbsp;first&nbsp;element&nbsp;and&nbsp;take&nbsp;away&nbsp;from&nbsp;dist&nbsp;list:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;3&nbsp;&nbsp;5&nbsp;&nbsp;7&nbsp;=&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;7</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;7&nbsp;=&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;6</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;6&nbsp;=&nbsp;2&nbsp;&nbsp;4&nbsp;&nbsp;6</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;2&nbsp;&nbsp;4&nbsp;&nbsp;5</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;1&nbsp;&nbsp;4&nbsp;&nbsp;5</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;1&nbsp;&nbsp;3&nbsp;&nbsp;5</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---&gt;&nbsp;0&nbsp;&nbsp;3&nbsp;&nbsp;5</span></span></span></div></pre><ul>
+<li>Basic operations is comparison when finding the frequency: <code style="font-family: Fira Mono;">cn</code> comparison</li>
+<li>To calculate dist list requires <code style="font-family: Fira Mono;">c-1</code> addition</li>
+<li>To sort requires <code style="font-family: Fira Mono;">n</code> subtraction</li>
+<li>Time efficiency: <code style="font-family: Fira Mono;">T(n) in O(n^2)</code></li>
+</ul>
+<p><strong>Example</strong> String Searching</p>
+<p>Check whether the word &#39;bomb&#39; exists in the large amount of text.</p>
+<ul>
+<li>Worst case: <code style="font-family: Fira Mono;">T(m,n) in O(m * n)</code></li>
+</ul>
+<p>Yay optimization --&gt; Boyer-Moore Algorithm for String Searching. It is based on two facts:</p>
+<ol>
+<li>No match (letters in comparison word aren&#39;t in the target word) =&gt; thus the text before comparison letter cannot contain target word =&gt; disregard the rest of the word</li>
+<li>Matching middle letters in the middle of words, form a bad symbol table. Also, a good suffix table which has the number of letters in the word and if the letter at that index matches, we can add it to the table</li>
+</ol>
+<p>Yay, more optimization, the Horspool Algorithm for String Searching exists!</p>
+<ul>
+<li>Find a way to shift the numbers</li>
+</ul>
+<h2 id="chapter-9-greedy-algorithms">Chapter 9 - Greedy Algorithms</h2>
+<p>Construct a solution to an optimization problem piece by piece through a sequence of choices.</p>
+<ol>
+<li>Feasible</li>
+<li>Locally optimal - make the best choice based on what you&#39;ve seen so far</li>
+<li>Irrevocable (immutable) - no backtracking</li>
+</ol>
+<p><strong>Example</strong> Making change in coins</p>
+<ul>
+<li>Give the fewest number of coins in the change</li>
+</ul>
+<p>Try with 53 cents.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>53&nbsp;/&nbsp;25&nbsp;==&nbsp;2&nbsp;*&nbsp;25c</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>3c&nbsp;left&nbsp;==&nbsp;3&nbsp;*&nbsp;1c</span></span></span></div></pre><h3 id="spanning-trees">Spanning Trees</h3>
+<ul>
+<li>Graph <code style="font-family: Fira Mono;">G</code>, is a spanning tree if it is a connected graph that covers all nodes of <code style="font-family: Fira Mono;">G</code></li>
+<li>Want to find the minimum spanning tree which is the sub-tree with the minimal weight if it is a weighted subgraph</li>
+</ul>
+<h4 id="prim-s-algorithm">Prim&#39;s Algorithm</h4>
+<ul>
+<li>At each step, all nodes have a pair associated with them; for some node <code style="font-family: Fira Mono;">n</code>, the form is: <code style="font-family: Fira Mono;">n(neighbour, distance)</code><ul>
+<li>If the other node is not a neighbour, put a dash for the neighbour and infinity for the distance</li>
+<li>If <code style="font-family: Fira Mono;">n</code> is attached to <code style="font-family: Fira Mono;">n2</code>, the pair would be <code style="font-family: Fira Mono;">(n2_distance_from(n, n2))</code></li>
+</ul>
+</li>
+<li>Each of these pairs are the options the algorithm has to pick from in a step; it picks with the lowest distance value</li>
+</ul>
+<h4 id="kruskal-s-algorithm">Kruskal&#39;s Algorithm</h4>
+<ul>
+<li>Preprocess edges and sort them</li>
+<li>Look for cycles when selecting maximum path/distance<ul>
+<li>Not expected to know</li>
+</ul>
+</li>
+</ul>
+<h4 id="dijkstra-s-algorithm">Dijkstra&#39;s Algorithm</h4>
+<ul>
+<li>Find the shortest path, one node of a graph to another</li>
+<li>Short <strong>cumulative</strong> path</li>
+<li><code style="font-family: Fira Mono;">T(n) in O(E * V)</code></li>
+</ul>
+<h3 id="coding">Coding</h3>
+<ul>
+<li>Use bit patterns to represent symbols</li>
+</ul>
+<h4 id="2-code">2 Code</h4>
+<ul>
+<li>Use a binary pattern to represent a symbol</li>
+</ul>
+<p><strong>Example</strong>  ASCII code</p>
+<ul>
+<li>7 bits to represent a symbol - fixed length code word</li>
+<li>We want to transmit as a few bits as possible</li>
+</ul>
+<p><strong>Goal</strong>: We want to send fewer number of bits</p>
+<p>1000 symbols ---&gt;</p>
+<p>ASCII           sends 7000 bits <br>
+Extended ASCII  sends 8000 bits</p>
+<h4 id="huffman-code-again-">Huffman Code {again} ...</h4>
+<p><strong>Preprocessing</strong>: (Let&#39;s say there are only 5 symbols)</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>_</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.35</td>
+<td>0.1</td>
+<td>0.2</td>
+<td>0.2</td>
+<td>0.15</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Find frequency of symbols in the text</li>
+<li>Create Huffman code according to their frequency<ul>
+<li>Higher frequency =&gt; shorter code</li>
+<li>Lower frequency  =&gt; longer code</li>
+</ul>
+</li>
+</ul>
+<h2 id="chapter-11-limitations-of-algorithms">Chapter 11 - Limitations of Algorithms</h2>
+<ul>
+<li>Difficult to find the lower bounds of some problem <em>P</em></li>
+<li>Much easier to find the lower bound for some problem <em>T</em> of <em>P</em><ul>
+<li>But the lower bound of T is not the lower bound for P</li>
+<li>There may be other solutions T<sub>1</sub>, T<sub>2</sub>, etc of different time efficiency brackets</li>
+</ul>
+</li>
+</ul>
+<h3 id="problem-reduction">Problem Reduction</h3>
+<ul>
+<li>We want to find a lower bound for problem <em>P</em></li>
+<li>Get a problem <em>Q</em> with a <strong>known</strong> lower bound</li>
+<li>Take an instance of Q and transform it into P: <code style="font-family: Fira Mono;">Q =&gt; P</code></li>
+<li>If the transformation can be done in polynomial time:<ul>
+<li>Any algorithm that can solve P can solve Q</li>
+<li>P is as hard as Q</li>
+<li>Lower bound of Q is the lower bound of P</li>
+</ul>
+</li>
+</ul>
+<h4 id="definition">Definition</h4>
+<p>An algorithm that can solve a problem in polynomial time for its worst case belongs in <code style="font-family: Fira Mono;">O(p(n))</code> where <code style="font-family: Fira Mono;">p(n)</code> is the polynomial of the problems <strong>input size</strong>.</p>
+<ul>
+<li>Input size is the order of the polynomial</li>
+</ul>
+<h4 id="definition">Definition</h4>
+<p>A problem is <strong>tractable</strong> if it is in <code style="font-family: Fira Mono;">O(p(n))</code> otherwise it is non-tractable</p>
+<ul>
+<li>ex. It can be solved in polynomial time IF tractable</li>
+</ul>
+<h4 id="optimization-problems">Optimization Problems</h4>
+<p>Find the minimum path from A to B, assignment problem, etc</p>
+<h4 id="decision-problem-yes-no-problems-">Decision Problem [yes/no problems]</h4>
+<ul>
+<li>Any optimization problem can be transformed into a decision problem</li>
+<li>ex. A minimum path problem can be transformed into a decision problem: is this the optimal path?</li>
+</ul>
+<h4 id="definition">Definition</h4>
+<p>Class <code style="font-family: Fira Mono;">P</code> is a class <code style="font-family: Fira Mono;">q</code> decision problem that can be solved in polynomial time by a <strong>deterministic algorithm</strong>.</p>
+<h4 id="definition">Definition</h4>
+<p>A non-deterministic algorithm is a 2 stage procedure that takes its input, an instance <em>I</em> of a decision problem and does the following:</p>
+<ol>
+<li>Non-deterministic stage: Generate a solution to I (by guessing)</li>
+<li>Use deterministic (polynomial time) algorithm to verify the solution generated in the non-deterministic shape</li>
+</ol>
+<h4 id="definition">Definition</h4>
+<p>Class NP is the class q decision problem that can be solved by a non-deterministic polynomial algorithm (solution can be determined to be correct or incorrect in polynomial time).</p>
+<ul>
+<li>P:  can be solved in polynomial time</li>
+<li>NP: cannot be solved in polynomial time</li>
+</ul>
+<p>P is a subset of Q</p>
+<ul>
+<li>Is P = NP or P != NP?</li>
+</ul>
+<h4 id="famous-np-complete-problem-cnf-satisfiability">Famous NP Complete Problem: CNF Satisfiability</h4>
+<ul>
+<li><code style="font-family: Fira Mono;">(A + B + C) &amp; (~A + D + F) &amp; (..) &amp; ... &amp; (..)</code><ul>
+<li>Each symbol can either be 0 or 1</li>
+<li>Find an assignment to the variables so the entire expansion is true</li>
+</ul>
+</li>
+<li>Approach, guess bit assignments for A, B, C, D, E, F?</li>
+<li>Verify if the solution is correct or not<ul>
+<li><strong>Can determine if the solution is correct in polynomial time</strong> (ex. <code style="font-family: Fira Mono;">O(n)</code>)</li>
+</ul>
+</li>
+<li><code style="font-family: Fira Mono;">2^n</code> complexity</li>
+<li>If other problems, Qi, can be reduced in this problem, the CNF, then CNF is a NP-complete system</li>
+</ul>
+<h3 id="approaches-for-solving-np-complete-problems">Approaches For Solving NP Complete Problems</h3>
+<ul>
+<li><strong>Brute force</strong>: Generate all possible solutions and find the <em>right</em> one</li>
+<li><strong>Back-tracking</strong>: Generate all possible solutions but try to cut out some possible solutions in generating process</li>
+<li><strong>Branch and bound</strong>: Refine the back-tracking method for optimization problems</li>
+</ul>
+<h2 id="chapter-12-coping-with-the-limitations-of-algorithm-power">chapter 12: Coping With The Limitations of Algorithm Power</h2>
+<h3 id="back-tracking-example-4-queens-problems">Back-Tracking Example: 4 Queens Problems</h3>
+<ul>
+<li>Place 4 Queens on a 4x4 chessboard so that none can attack each other</li>
+<li>Using DFS: Each placement of a node represents a node of a tree<ul>
+<li>When adding new children to a node, go through possible next steps given the previous step from the parent<ul>
+<li>Apply this to children until either a solution is found or there are no possible moves</li>
+<li>If no possible moves: back-track and try another another location</li>
+</ul>
+</li>
+<li>Start with the root of the state space tree<ul>
+<li>Explore using DFS</li>
+<li>Stop exploring subtree if I cannot lead to a solution and track its parent node to continue the search</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-finding-a-hamiltonian-circuit">Example: Finding A Hamiltonian Circuit</h3>
+<ul>
+<li>Find a path to go through all nodes of a graph once and back to the starting point</li>
+<li>Using DFS to explore a graph (pick an arbitrary node and go to it&#39;s lowest alphabetical, adjacent node)<ul>
+<li>Back-track to previously explored node if hit a no-solution point</li>
+<li>Upon back-tracking, you cannot go to adjacent nodes that are already a part of the path leading from the root of the current node</li>
+</ul>
+</li>
+</ul>
+<h3 id="branch-and-bound-algorithms">Branch and Bound Algorithms</h3>
+<h4 id="knapsack-problem">Knapsack Problem</h4>
+<ul>
+<li>Only works for optimization problems</li>
+<li>Ex. given a knapsack of a fixed size, and a number of items; maximize the number of items that go into the backpack<ul>
+<li>Calculate the value/pound ratio</li>
+<li>At each step, the upper bound is the sum of the item&#39;s value currently in the bag, plus the remaining weight times, the highest value/pound of an item still being considered</li>
+<li>Starting with the highest value/pound item, consider the UB of including the item and not including it, (including on left, discluding on right)</li>
+<li>Expand the node with the highest UB with the inclusion of the a node for including the next best value/pound and not including it</li>
+<li>Keep expanding the nodes with the highest upper bounds, including the next value/pound each time</li>
+<li>Stop until you get  solution that is higher than the UB of the remaining leafs</li>
+</ul>
+</li>
+</ul>
+<h4 id="assignment-problem">Assignment Problem</h4>
+<ul>
+<li>Goal is to minimize assignment cost</li>
+<li>Create a start node for the first job<ul>
+<li>Lower bound is sum of lowest row value for each row, as long as the rows value isn’t in the same column as the jobs already selected on this path</li>
+</ul>
+</li>
+<li>Initially expand start node with all possible assignments for person A</li>
+<li>Expand the assignment with the smallest lower bound, including all assignments for person B</li>
+<li>Keep doing this until a solution is found with a cost less than or equal to all other node’s lower bounds</li>
+</ul></body>
+</html>
