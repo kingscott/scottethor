@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>cp216</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); overflow: auto; background-color: rgb(40, 44, 52); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line,
+.host .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region,
+.host .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .gutter .line-number,
+.host .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line,
+.host .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,
+.host .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right,
+.host .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #abb2bf;
+}
+.comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.entity.name.type {
+  color: #e5c07b;
+}
+.entity.other.inherited-class {
+  color: #98c379;
+}
+.keyword {
+  color: #c678dd;
+}
+.keyword.control {
+  color: #c678dd;
+}
+.keyword.operator {
+  color: #abb2bf;
+}
+.keyword.other.special-method {
+  color: #61afef;
+}
+.keyword.other.unit {
+  color: #d19a66;
+}
+.storage {
+  color: #c678dd;
+}
+.storage.type.annotation,
+.storage.type.primitive {
+  color: #c678dd;
+}
+.storage.modifier.package,
+.storage.modifier.import {
+  color: #abb2bf;
+}
+.constant {
+  color: #d19a66;
+}
+.constant.variable {
+  color: #d19a66;
+}
+.constant.character.escape {
+  color: #56b6c2;
+}
+.constant.numeric {
+  color: #d19a66;
+}
+.constant.other.color {
+  color: #56b6c2;
+}
+.constant.other.symbol {
+  color: #56b6c2;
+}
+.variable {
+  color: #e06c75;
+}
+.variable.interpolation {
+  color: #be5046;
+}
+.variable.parameter {
+  color: #abb2bf;
+}
+.string {
+  color: #98c379;
+}
+.string.regexp {
+  color: #56b6c2;
+}
+.string.regexp .source.ruby.embedded {
+  color: #e5c07b;
+}
+.string.other.link {
+  color: #e06c75;
+}
+.punctuation.definition.comment {
+  color: #5c6370;
+}
+.punctuation.definition.method-parameters,
+.punctuation.definition.function-parameters,
+.punctuation.definition.parameters,
+.punctuation.definition.separator,
+.punctuation.definition.seperator,
+.punctuation.definition.array {
+  color: #abb2bf;
+}
+.punctuation.definition.heading,
+.punctuation.definition.identity {
+  color: #61afef;
+}
+.punctuation.definition.bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.punctuation.definition.italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.punctuation.section.embedded {
+  color: #be5046;
+}
+.punctuation.section.method,
+.punctuation.section.class,
+.punctuation.section.inner-class {
+  color: #abb2bf;
+}
+.support.class {
+  color: #e5c07b;
+}
+.support.type {
+  color: #56b6c2;
+}
+.support.function {
+  color: #56b6c2;
+}
+.support.function.any-method {
+  color: #61afef;
+}
+.entity.name.function {
+  color: #61afef;
+}
+.entity.name.class,
+.entity.name.type.class {
+  color: #e5c07b;
+}
+.entity.name.section {
+  color: #61afef;
+}
+.entity.name.tag {
+  color: #e06c75;
+}
+.entity.other.attribute-name {
+  color: #d19a66;
+}
+.entity.other.attribute-name.id {
+  color: #61afef;
+}
+.meta.class {
+  color: #e5c07b;
+}
+.meta.class.body {
+  color: #abb2bf;
+}
+.meta.method-call,
+.meta.method {
+  color: #abb2bf;
+}
+.meta.definition.variable {
+  color: #e06c75;
+}
+.meta.link {
+  color: #d19a66;
+}
+.meta.require {
+  color: #61afef;
+}
+.meta.selector {
+  color: #c678dd;
+}
+.meta.separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.meta.tag {
+  color: #abb2bf;
+}
+.none {
+  color: #abb2bf;
+}
+.invalid.deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.invalid.illegal {
+  color: #ffffff !important;
+  background-color: #e05252 !important;
+}
+.markup.bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.markup.changed {
+  color: #c678dd;
+}
+.markup.deleted {
+  color: #e06c75;
+}
+.markup.italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.markup.heading .punctuation.definition.heading {
+  color: #61afef;
+}
+.markup.inserted {
+  color: #98c379;
+}
+.markup.list {
+  color: #e06c75;
+}
+.markup.quote {
+  color: #d19a66;
+}
+.markup.raw {
+  color: #98c379;
+}
+.source.cs .keyword.operator {
+  color: #c678dd;
+}
+.source.css .property-name,
+.source.css .property-value {
+  color: #828997;
+}
+.source.css .property-name.support,
+.source.css .property-value.support {
+  color: #abb2bf;
+}
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+}
+.source.gfm .markup.heading {
+  color: #e06c75;
+}
+.source.gfm .markup.link {
+  color: #c678dd;
+}
+.source.gfm .link .entity {
+  color: #61afef;
+}
+.source.ini .keyword.other.definition.ini {
+  color: #e06c75;
+}
+.source.java .storage.modifier.import {
+  color: #e5c07b;
+}
+.source.java .storage.type {
+  color: #e5c07b;
+}
+.source.java-properties .meta.key-pair {
+  color: #e06c75;
+}
+.source.java-properties .meta.key-pair > .punctuation {
+  color: #abb2bf;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json {
+  color: #e06c75;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
+  color: #e06c75;
+}
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
+  color: #98c379;
+}
+.source.json .meta.structure.dictionary.json > .constant.language.json,
+.source.json .meta.structure.array.json > .constant.language.json {
+  color: #56b6c2;
+}
+.source.ruby .constant.other.symbol > .punctuation {
+  color: inherit;
+}
+.source.python .keyword.operator.logical.python {
+  color: #c678dd;
+}
+.source.python .variable.parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1 id="cp216-introduction-to-microprocessors">CP216: Introduction to Microprocessors</h1>
+<h2 id="introduction">Introduction</h2>
+<h3 id="how-regular-languages-work">How Regular Languages Work</h3>
+<p>C-like languages:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>compile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loader</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>HLL&nbsp;program&nbsp;&nbsp;&nbsp;-&gt;&nbsp;&nbsp;&nbsp;&nbsp;intermediate&nbsp;code&nbsp;(pseudo-assembly)&nbsp;&nbsp;&nbsp;-&gt;&nbsp;&nbsp;&nbsp;object&nbsp;code&nbsp;&nbsp;|-&gt;|&nbsp;&nbsp;machine&nbsp;code</span></span></span></div></pre><p>Higher level languages (Java, Python, etc):</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>compile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VM&nbsp;loader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VM&nbsp;compiler</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>HLL&nbsp;program&nbsp;&nbsp;&nbsp;-&gt;&nbsp;&nbsp;&nbsp;&nbsp;portable&nbsp;code&nbsp;&nbsp;|-&gt;|&nbsp;&nbsp;&nbsp;VM&nbsp;memory&nbsp;image&nbsp;&nbsp;-&gt;&nbsp;&nbsp;machine&nbsp;code</span></span></span></div></pre><h3 id="general-information-on-assembly-language">General Information On Assembly Language</h3>
+<ul>
+<li>Microprocessors and assembly languages are modularized -&gt; one compiler for one mCPU and language</li>
+</ul>
+<h4 id="structure-of-syntax">Structure Of Syntax</h4>
+<p><code style="font-family: Fira Mono;">label    opcode    operand(s)    comment</code></p>
+<ul>
+<li><strong>Label</strong>: Represents an address</li>
+<li><strong>Opcode</strong>: Operation to be performed; + specific length: <code style="font-family: Fira Mono;">B, W, L</code></li>
+<li><strong>Operand</strong>: 1<sup>st</sup> operand is the source, 2<sub>nd</sub> operand is the destination</li>
+</ul>
+<p>Notations:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>On Paper</th>
+<th>M68000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>decimal</td>
+<td>10</td>
+<td><code style="font-family: Fira Mono;">10</code></td>
+</tr>
+<tr>
+<td>hexadecimal</td>
+<td>A<sub>16</sub></td>
+<td><code style="font-family: Fira Mono;">$A</code></td>
+</tr>
+<tr>
+<td>binary</td>
+<td>1010<sub>2</sub></td>
+<td><code style="font-family: Fira Mono;">%1010</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="assembler-directives">Assembler Directives</h3>
+<ul>
+<li>Instructions to the assembler while your program is being assembled</li>
+<li>They do <strong>NOT</strong> generate machine code</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<ul>
+<li><code style="font-family: Fira Mono;">ORIGIN</code>: Specifies a memory location where the next piece or data is located (don&#39;t start below <code style="font-family: Fira Mono;">$400</code>)<ul>
+<li>Addresses are always in hex</li>
+</ul>
+</li>
+<li><code style="font-family: Fira Mono;">END</code>: Last line of code in program<ul>
+<li>Stops assembly process</li>
+</ul>
+</li>
+<li><p><code style="font-family: Fira Mono;">EQUATE</code>: Equates a symbol with a number</p>
+<ul>
+<li>Usage:</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>WEEKS&nbsp;&nbsp;&nbsp;EQU&nbsp;&nbsp;&nbsp;52</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>DAYS&nbsp;&nbsp;&nbsp;&nbsp;EQU&nbsp;&nbsp;&nbsp;WEEKS*7</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div></pre></li>
+<li><p><strong>Define Constant</strong>: Allocate and initialize a memory location</p>
+<ul>
+<li>Usage: <code style="font-family: Fira Mono;">DC.B</code>, <code style="font-family: Fira Mono;">DC.W</code>, <code style="font-family: Fira Mono;">DC.L</code></li>
+</ul>
+</li>
+<li><strong>Define Storage</strong>: Allocate a specified amount of memory, but does not initialize it<ul>
+<li>Usage: <code style="font-family: Fira Mono;">DC.B</code>, <code style="font-family: Fira Mono;">DC.W</code>, <code style="font-family: Fira Mono;">DC.L</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="program-structure">Program Structure</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;{&nbsp;comment&nbsp;section&nbsp;}</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>STOP&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>END&nbsp;&nbsp;&nbsp;$1000&nbsp;or&nbsp;START</span></span></span></div></pre><h4 id="example-program-to-add-two-numbers-and-store-result-">Example - Program to add two numbers [and store result]</h4>
+<p>Inputs: <code style="font-family: Fira Mono;">NUM1</code>, <code style="font-family: Fira Mono;">NUM2</code> (byte length)
+Output: <code style="font-family: Fira Mono;">RESULT</code> (byte length)
+Algorithm:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>D0&nbsp;&lt;-&nbsp;NUM1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>D1&nbsp;&lt;-&nbsp;NUM2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>D1&nbsp;&lt;-&nbsp;D0&nbsp;+&nbsp;D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>RESULT&nbsp;&lt;-&nbsp;D1</span></span></span></div></pre><pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;num1,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;first&nbsp;number</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;num2,D1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;second&nbsp;value</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,D1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;actually&nbsp;adds&nbsp;the&nbsp;numbers</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;D1,result&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;store&nbsp;result</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num1&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num2&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>result&nbsp;&nbsp;DS.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>END&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;START</span></span></span></div></pre><h2 id="information-characters-numbers-assembly">Information Characters/Numbers Assembly</h2>
+<ul>
+<li>The size of a byte stays the same across all assembly languages</li>
+<li>The size of a word is dependent on the natural systems length (architecture)</li>
+</ul>
+<h3 id="integer-representation">Integer Representation</h3>
+<p><strong>Unsigned</strong> numbers are assumed to be positive and no bits are used to represent the sign. <strong>Signed</strong> numbers follow this:</p>
+<ol>
+<li>Positive and negative numbers</li>
+<li>Sign test - test whether negative or positive</li>
+<li>Zero test - test whether the number is 0</li>
+<li>Easy implementation of arithmetic. In order of important: addition, subtraction, multiplication, division</li>
+</ol>
+<h4 id="secrets">Secrets</h4>
+<ul>
+<li><em>Signed magnitude</em> uses the first bit to determine sign; <code style="font-family: Fira Mono;">1</code> for negative, <code style="font-family: Fira Mono;">0</code> for positive</li>
+<li><em>Diminished radix complement</em> in base 2 is 1&#39;s complement (9&#39;s complement in base 10)</li>
+<li><em>Radix complement</em> in base 2 is 2&#39;s complement (10&#39;s complement in base 10)</li>
+</ul>
+<p><strong>Note</strong>: Positive numbers are <em>ALWAYS</em> stored the same, whether unsigned, signed, 1&#39;s or 2&#39;s complement.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>+6</th>
+<th>-6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unsigned</td>
+<td><code style="font-family: Fira Mono;">00000110</code></td>
+<td>---</td>
+</tr>
+<tr>
+<td>signed-magnitude</td>
+<td><code style="font-family: Fira Mono;">00000110</code></td>
+<td><code style="font-family: Fira Mono;">10000110</code></td>
+</tr>
+<tr>
+<td>1&#39;s complement</td>
+<td><code style="font-family: Fira Mono;">00000110</code></td>
+<td><code style="font-family: Fira Mono;">11111001</code></td>
+</tr>
+<tr>
+<td>2&#39;s complement</td>
+<td><code style="font-family: Fira Mono;">00000110</code></td>
+<td><code style="font-family: Fira Mono;">11111010</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="character-representation">Character Representation</h3>
+<p>Characters are usually represented using <strong>ASCII</strong>. In 68000, characters are represented using single quotes; <code style="font-family: Fira Mono;">&#39;123&#39; = 31 32 33</code> / character = hex.</p>
+<h3 id="storing-in-memory">Storing In Memory</h3>
+<p><strong>Example</strong> Memory Dump</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1006</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ITEM&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;$D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>LIST_L&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>LIST&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;$C1,$A3,$3A,$D0</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>INDEX&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ERR_M&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;‘Error’,0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ONES&nbsp;&nbsp;&nbsp;&nbsp;DCB.B&nbsp;&nbsp;&nbsp;5,$FF</span></span></span></div></pre><table>
+<thead>
+<tr>
+<th></th>
+<th><code style="font-family: Fira Mono;">00</code></th>
+<th><code style="font-family: Fira Mono;">01</code></th>
+<th><code style="font-family: Fira Mono;">02</code></th>
+<th><code style="font-family: Fira Mono;">03</code></th>
+<th><code style="font-family: Fira Mono;">04</code></th>
+<th><code style="font-family: Fira Mono;">05</code></th>
+<th><code style="font-family: Fira Mono;">06</code></th>
+<th><code style="font-family: Fira Mono;">07</code></th>
+<th><code style="font-family: Fira Mono;">08</code></th>
+<th><code style="font-family: Fira Mono;">09</code></th>
+<th><code style="font-family: Fira Mono;">0A</code></th>
+<th><code style="font-family: Fira Mono;">0B</code></th>
+<th><code style="font-family: Fira Mono;">0C</code></th>
+<th><code style="font-family: Fira Mono;">0D</code></th>
+<th><code style="font-family: Fira Mono;">0E</code></th>
+<th><code style="font-family: Fira Mono;">0F</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">1000</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">D0</code></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">04</code></td>
+<td><code style="font-family: Fira Mono;">C1</code></td>
+<td><code style="font-family: Fira Mono;">A3</code></td>
+<td><code style="font-family: Fira Mono;">3A</code></td>
+<td><code style="font-family: Fira Mono;">D0</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">1010</code></td>
+<td>-</td>
+<td>-</td>
+<td><code style="font-family: Fira Mono;">45</code></td>
+<td><code style="font-family: Fira Mono;">72</code></td>
+<td><code style="font-family: Fira Mono;">72</code></td>
+<td><code style="font-family: Fira Mono;">6F</code></td>
+<td><code style="font-family: Fira Mono;">72</code></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">FF</code></td>
+<td><code style="font-family: Fira Mono;">FF</code></td>
+<td><code style="font-family: Fira Mono;">FF</code></td>
+<td><code style="font-family: Fira Mono;">FF</code></td>
+<td><code style="font-family: Fira Mono;">FF</code></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1006</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ITEM&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;$D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>LIST_L&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;3</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>LIST&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;$C1,$A3,$3A</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>INDEX&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ERR_M&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;‘Error’,0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ONES&nbsp;&nbsp;&nbsp;&nbsp;DCB.W&nbsp;&nbsp;&nbsp;3,$FF</span></span></span></div></pre><p>Note: If you are adding a word/long word, you need to start on an even address.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code style="font-family: Fira Mono;">00</code></th>
+<th><code style="font-family: Fira Mono;">01</code></th>
+<th><code style="font-family: Fira Mono;">02</code></th>
+<th><code style="font-family: Fira Mono;">03</code></th>
+<th><code style="font-family: Fira Mono;">04</code></th>
+<th><code style="font-family: Fira Mono;">05</code></th>
+<th><code style="font-family: Fira Mono;">06</code></th>
+<th><code style="font-family: Fira Mono;">07</code></th>
+<th><code style="font-family: Fira Mono;">08</code></th>
+<th><code style="font-family: Fira Mono;">09</code></th>
+<th><code style="font-family: Fira Mono;">0A</code></th>
+<th><code style="font-family: Fira Mono;">0B</code></th>
+<th><code style="font-family: Fira Mono;">0C</code></th>
+<th><code style="font-family: Fira Mono;">0D</code></th>
+<th><code style="font-family: Fira Mono;">0E</code></th>
+<th><code style="font-family: Fira Mono;">0F</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">1000</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">D0</code></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">03</code></td>
+<td><code style="font-family: Fira Mono;">C1</code></td>
+<td><code style="font-family: Fira Mono;">A3</code></td>
+<td><code style="font-family: Fira Mono;">3A</code></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">1010</code></td>
+<td>-</td>
+<td>-</td>
+<td><code style="font-family: Fira Mono;">45</code></td>
+<td><code style="font-family: Fira Mono;">72</code></td>
+<td><code style="font-family: Fira Mono;">72</code></td>
+<td><code style="font-family: Fira Mono;">6F</code></td>
+<td><code style="font-family: Fira Mono;">72</code></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">FF</code></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">FF</code></td>
+<td><code style="font-family: Fira Mono;">00</code></td>
+<td><code style="font-family: Fira Mono;">FF</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="m68000-programming-model">M68000 Programming Model</h2>
+<ul>
+<li>The &#39;programming model&#39; is the computer architecture that the programmer can access</li>
+<li>If you are access a register at less than the full length, the operation treats the rest of the register as if it does not exist</li>
+</ul>
+<h3 id="data-registers-d0-d7-">Data registers: [<code style="font-family: Fira Mono;">D0-D7</code>]</h3>
+<ul>
+<li><code style="font-family: Fira Mono;">0</code> to <code style="font-family: Fira Mono;">7</code> is a byte</li>
+<li><code style="font-family: Fira Mono;">0</code> to <code style="font-family: Fira Mono;">15</code> is a word</li>
+<li><code style="font-family: Fira Mono;">0</code> to <code style="font-family: Fira Mono;">31</code> is a longword</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><code style="font-family: Fira Mono;">31</code></th>
+<th>...</th>
+<th><code style="font-family: Fira Mono;">15</code></th>
+<th>...</th>
+<th><code style="font-family: Fira Mono;">7</code></th>
+<th><code style="font-family: Fira Mono;">6</code></th>
+<th><code style="font-family: Fira Mono;">5</code></th>
+<th><code style="font-family: Fira Mono;">4</code></th>
+<th><code style="font-family: Fira Mono;">3</code></th>
+<th><code style="font-family: Fira Mono;">2</code></th>
+<th><code style="font-family: Fira Mono;">1</code></th>
+<th><code style="font-family: Fira Mono;">0</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">s</code></td>
+<td></td>
+<td><code style="font-family: Fira Mono;">s</code></td>
+<td></td>
+<td><code style="font-family: Fira Mono;">s</code> <br>(sign bit for byte)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="address-registers-a0-a7-">Address registers: [<code style="font-family: Fira Mono;">A0-A7</code>]</h3>
+<ul>
+<li>Cannot access address register at a byte - you can only move/access words</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><code style="font-family: Fira Mono;">31</code></th>
+<th>...</th>
+<th><code style="font-family: Fira Mono;">15</code></th>
+<th>...</th>
+<th><code style="font-family: Fira Mono;">0</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">s</code></td>
+<td></td>
+<td><code style="font-family: Fira Mono;">s</code></td>
+<td></td>
+<td><code style="font-family: Fira Mono;">s</code> <br>(sign bit for byte)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-registers">Other Registers</h3>
+<h4 id="stack-pointer">Stack Pointer</h4>
+<p><em>Note</em>: 68000 (EASy68K) runs in supervisor mode by default</p>
+<ul>
+<li>2 stack pointers since 68000 can run in user mode (applications) or supervisor mode (operating system)<ul>
+<li>USP: User Stack Pointer</li>
+<li>SSP: Supervisor Stack Pointer</li>
+</ul>
+</li>
+<li>Can only see one pointer at any given time - referred to as A7 or SP</li>
+</ul>
+<h4 id="program-counter-pc-">Program Counter (PC)</h4>
+<ul>
+<li>Address of instruction being executed</li>
+</ul>
+<h4 id="status-register-sr-">Status Register (SR)</h4>
+<ul>
+<li>Also called Condition Code Register</li>
+<li>Bits indicating current system state</li>
+</ul>
+<h3 id="format-of-data-in-memory">Format Of Data In Memory</h3>
+<ul>
+<li>A byte also looks like: <code style="font-family: Fira Mono;">7  6  5  4  3  2  1  0</code> where <code style="font-family: Fira Mono;">0</code> is the least significant byte and <code style="font-family: Fira Mono;">7</code> is the most significant bit</li>
+<li>Remember, every byte has an address</li>
+</ul>
+<p>In memory:</p>
+<table>
+<thead>
+<tr>
+<th>In Memory</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">Byte 0</code><br> m</td>
+<td><code style="font-family: Fira Mono;">Byte 1</code> <br>m+1</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">Byte 2</code><br>m+2</td>
+<td><code style="font-family: Fira Mono;">Byte 3</code><br>m+3</td>
+</tr>
+</tbody>
+</table>
+<p>where <code style="font-family: Fira Mono;">m + i</code> is the location in memory.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>byte stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">m</code></td>
+<td><code style="font-family: Fira Mono;">Byte 0</code></td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">m+1</code></td>
+<td><code style="font-family: Fira Mono;">Byte 1</code></td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">m+2</code></td>
+<td><code style="font-family: Fira Mono;">Byte 2</code></td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="big-endian-vs-little-endian">Big Endian vs. Little Endian</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Big Endian</th>
+<th>Little Endian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The gain</td>
+<td>- Better for comparing characters<br> - Faster, less confusing memory dumps</td>
+<td>- Easier for multiprecision arithmetic<br> - Easier for conversion to 64-bit address, from 32</td>
+</tr>
+<tr>
+<td>Stored</td>
+<td>most sig. byte first</td>
+<td>least sig. byte first</td>
+</tr>
+<tr>
+<td>Given number</td>
+<td><code style="font-family: Fira Mono;">72 F0 A9 83</code></td>
+<td><code style="font-family: Fira Mono;">83 A9 F0 72</code></td>
+</tr>
+<tr>
+<td>In memory</td>
+<td><code style="font-family: Fira Mono;">72 F0 A9 83</code></td>
+<td><code style="font-family: Fira Mono;">72 F0 A9 83</code></td>
+</tr>
+</tbody>
+</table>
+<p>Addresses of words in memory:</p>
+<ul>
+<li>Must be an even boundary (m + <strong>i</strong>)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Word</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">m</code></td>
+<td><code style="font-family: Fira Mono;">Word 0</code> (<code style="font-family: Fira Mono;">Byte 0</code> + <code style="font-family: Fira Mono;">Byte 1</code>)</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">m+2</code></td>
+<td><code style="font-family: Fira Mono;">Word 1</code> (<code style="font-family: Fira Mono;">Byte 2</code> + <code style="font-family: Fira Mono;">Byte 3</code>)</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">m+4</code></td>
+<td><code style="font-family: Fira Mono;">Word 2</code> (<code style="font-family: Fira Mono;">Byte 4</code> + <code style="font-family: Fira Mono;">Byte 5</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Address of longwords in memory:</p>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Longword</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">m</code></td>
+<td><code style="font-family: Fira Mono;">Longword 0</code> (<code style="font-family: Fira Mono;">Word 0</code> + <code style="font-family: Fira Mono;">Word 1</code>)</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">m+4</code></td>
+<td><code style="font-family: Fira Mono;">Longword 1</code> (<code style="font-family: Fira Mono;">Word 2</code> + <code style="font-family: Fira Mono;">Word 3</code>)</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">m+8</code></td>
+<td><code style="font-family: Fira Mono;">Longword 2</code> (<code style="font-family: Fira Mono;">Word 4</code> + <code style="font-family: Fira Mono;">Word 5</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong> Copy 16 bits of data from one memory location to another</p>
+<ul>
+<li><p>Algorithm: <code style="font-family: Fira Mono;">num2</code> &lt;- <code style="font-family: Fira Mono;">num1</code></p>
+</li>
+<li><p>Move to an intermediary register (<strong>most ideal</strong>)</p>
+</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;num1,D0&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;value</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D0,num2&nbsp;&nbsp;&nbsp;;&nbsp;and&nbsp;store</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STOP&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num1&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;$2E56</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num2&nbsp;&nbsp;&nbsp;&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>END&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div></pre><ol>
+<li>Move directly to <code style="font-family: Fira Mono;">num2</code></li>
+</ol>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num1,num2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><ol>
+<li>Not ideal - but can be done</li>
+</ol>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.B&nbsp;&nbsp;num1,num2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;would&nbsp;only&nbsp;put&nbsp;the&nbsp;first&nbsp;byte&nbsp;of&nbsp;num1&nbsp;into&nbsp;num2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.B&nbsp;&nbsp;num1+1,num2+1&nbsp;&nbsp;&nbsp;;&nbsp;this&nbsp;is&nbsp;needed&nbsp;to&nbsp;move&nbsp;the&nbsp;second&nbsp;byte&nbsp;in&nbsp;there&nbsp;too</span></span></span></div></pre><ol>
+<li>Using an improper length suffix</li>
+</ol>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.L&nbsp;&nbsp;num1,num2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;we&nbsp;are&nbsp;going&nbsp;to&nbsp;get&nbsp;all&nbsp;of&nbsp;num1&nbsp;(word)&nbsp;and&nbsp;whatever&nbsp;word&nbsp;of&nbsp;data&nbsp;is&nbsp;in&nbsp;num2:&nbsp;MUMBO&nbsp;JUMBO</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;this&nbsp;is&nbsp;alright&nbsp;for&nbsp;the&nbsp;way&nbsp;the&nbsp;data&nbsp;is&nbsp;setup&nbsp;now,&nbsp;but&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num2&nbsp;&nbsp;&nbsp;&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;if&nbsp;we&nbsp;had&nbsp;it&nbsp;stored&nbsp;like&nbsp;this,&nbsp;it&nbsp;would&nbsp;overwrite&nbsp;num1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num1&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;$2E56</span></span></span></div></pre><p><strong>Example</strong> Addition of two 16 bit numbers</p>
+<ul>
+<li>Algorithm:<ul>
+<li><code style="font-family: Fira Mono;">D0 &lt;- num1</code></li>
+<li><code style="font-family: Fira Mono;">D1 &lt;- num2</code></li>
+<li><code style="font-family: Fira Mono;">D1 &lt;- D0+D1</code></li>
+<li><code style="font-family: Fira Mono;">sum &lt;- D1</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>1.</strong> Standard way</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num1,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;first&nbsp;value</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num2,D1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;and&nbsp;the&nbsp;second</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD.W&nbsp;&nbsp;&nbsp;D0,D1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;add&nbsp;values</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D1,sum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;store&nbsp;output</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num1&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;$1075</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num2&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;$0625</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>sum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div></pre><p><strong>2.</strong> Alternative: minus one operation (<strong>preferred</strong>) [4 memory accesses]</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num1,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;grab&nbsp;first&nbsp;value</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD.W&nbsp;&nbsp;&nbsp;num2,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;add&nbsp;second&nbsp;value&nbsp;directly&nbsp;to&nbsp;register</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D0,sum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;store</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><p><strong>3.</strong> Using an one intermediary - but uses result memory automatically [5 memory accesses]</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num1,sum&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;put&nbsp;first&nbsp;in&nbsp;result&nbsp;memory</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num2,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;put&nbsp;in&nbsp;intermediary&nbsp;register</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD.W&nbsp;&nbsp;&nbsp;D0,sum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;read&nbsp;from&nbsp;memory,&nbsp;add,&nbsp;write&nbsp;to&nbsp;memory</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><p><strong>Example</strong> Takes 1&#39;s complement of 16 bit value stored in memory</p>
+<ul>
+<li>Input: <code style="font-family: Fira Mono;">$7F3E -&gt; 0111 1111 0011 1110</code></li>
+<li>Ouput: <code style="font-family: Fira Mono;">$7F3E =&gt; $80C1 == 1000 0000 1100 0001</code></li>
+</ul>
+<p><strong>1.</strong> Standard</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;grab&nbsp;value</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOT.W&nbsp;&nbsp;&nbsp;D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;1&#39;s&nbsp;complement</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D0,num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;rewrite&nbsp;old&nbsp;num&nbsp;and&nbsp;store</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;$7F3E</span></span></span></div></pre><p><strong>2.</strong> Take 1&#39;s complement directly in memory</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOT.W&nbsp;&nbsp;num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;do&nbsp;it&nbsp;directly</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><p><strong>3.</strong> Subtraction method</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;#$FFFF,D0&nbsp;&nbsp;&nbsp;;&nbsp;move&nbsp;direct&nbsp;value&nbsp;to&nbsp;register</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num,D1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;move&nbsp;num</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUB.W&nbsp;&nbsp;&nbsp;D1,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;takes&nbsp;1&#39;s&nbsp;complement&nbsp;in&nbsp;D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D0,sum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;store</span></span></span></div></pre><p><strong>4.</strong> <code style="font-family: Fira Mono;">NEG</code> gives us 2&#39;s complement</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEG.W&nbsp;&nbsp;&nbsp;D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUB.W&nbsp;&nbsp;&nbsp;#1,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D0,num</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><h2 id="addressing-modes">Addressing Modes</h2>
+<ul>
+<li>Defines how data is accessed</li>
+<li>Orthogonality property: every addressing mode would work with every instruction</li>
+<li>Effective address, <code style="font-family: Fira Mono;">&lt;ea&gt;</code> or <code style="font-family: Fira Mono;">EA</code>; indicates how the address of the operand is calculated</li>
+<li>All addressing modes, except <em>immediate</em> have an EA</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ADD&nbsp;&nbsp;&nbsp;Dn,&lt;ea&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;OR</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ADD&nbsp;&nbsp;&nbsp;&lt;ea&gt;,Dn</span></span></span></div></pre><h3 id="basic-addressing-modes">Basic Addressing Modes</h3>
+<h4 id="1-immediate">1. Immediate</h4>
+<ul>
+<li><code style="font-family: Fira Mono;">#</code> indicates that the item that follows is immediate data (Ex. <code style="font-family: Fira Mono;">#4</code>, <code style="font-family: Fira Mono;">#The</code>, <code style="font-family: Fira Mono;">#%1001</code>)</li>
+<li><code style="font-family: Fira Mono;">&lt;ea&gt;</code> = none</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;#25,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;where&nbsp;D0&nbsp;is&nbsp;00&nbsp;00&nbsp;00&nbsp;19</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>;&nbsp;#25&nbsp;=&nbsp;$19</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ADDI.B&nbsp;&nbsp;&nbsp;&nbsp;#1,D2</span></span></span></div></pre><h4 id="2-register-direct-d-sub-n-sub-or-a-sub-n-sub-">2. Register Direct (D<sub>n</sub> or A<sub>n</sub>)</h4>
+<ul>
+<li>Operand is a general register</li>
+<li><code style="font-family: Fira Mono;">&lt;ea&gt;</code> = R<sub>n</sub></li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;#25,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;direct</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ADDI.B&nbsp;&nbsp;&nbsp;&nbsp;#1,D2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;immediate</span></span></span></div></pre><h4 id="3-memory-direct">3. Memory Direct</h4>
+<ul>
+<li>Operand is a variable +- constant expression (lazily evaluated)</li>
+<li>The address of the operand is part of the instruction</li>
+<li><code style="font-family: Fira Mono;">&lt;ea&gt;</code> = address</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.B&nbsp;&nbsp;D0,num1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;memory&nbsp;direct</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num1&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;$05</span></span></span></div></pre><p>Also:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;25,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;will&nbsp;move&nbsp;whatever&nbsp;is&nbsp;in&nbsp;memory&nbsp;location&nbsp;25&nbsp;to&nbsp;D0</span></span></span></div></pre><ul>
+<li><code style="font-family: Fira Mono;">(xxx).W</code> or <code style="font-family: Fira Mono;">Abs.W</code> (stored as 16 bits) [absolute short]<ul>
+<li>Ranges from <code style="font-family: Fira Mono;">$0</code> to <code style="font-family: Fira Mono;">7FFF</code> and <code style="font-family: Fira Mono;">$8000</code> to <code style="font-family: Fira Mono;">$FFFF</code></li>
+</ul>
+</li>
+<li><code style="font-family: Fira Mono;">(xxx).L</code> or <code style="font-family: Fira Mono;">Abs.L</code> (stored as 32 bits) [absolute long]</li>
+<li>Abs. short generates the more compact machine code</li>
+</ul>
+<hr>
+<p><strong>Example</strong> Shift a 16-variable left one bit in place</p>
+<ul>
+<li>Input: num(W) = <code style="font-family: Fira Mono;">$57B6</code> = <code style="font-family: Fira Mono;">0101 0111 1011 0110</code></li>
+<li><p>Output: num(W) = <code style="font-family: Fira Mono;">$AF6C</code> = <code style="font-family: Fira Mono;">1010 1111 0110 1100</code></p>
+</li>
+<li><p>Algorithm:</p>
+<ul>
+<li><code style="font-family: Fira Mono;">D0 &lt;- num</code></li>
+<li><code style="font-family: Fira Mono;">D0 &lt;- leftshift(D0)</code></li>
+<li><code style="font-family: Fira Mono;">num &lt;- D0</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>1.</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;num,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;value</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSL.W&nbsp;&nbsp;&nbsp;#1,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;shift&nbsp;by&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D0,num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;and&nbsp;store</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>STOP&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;$57B6</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>END&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;START</span></span></span></div></pre><p><strong>2.</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSL.W&nbsp;&nbsp;&nbsp;num</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><p><strong>3.</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;num,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;#1,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSL.W&nbsp;&nbsp;&nbsp;D1,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D0,num</span></span></span></div></pre><p><strong>4.</strong> Not ideal since multiplication is expensive</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MULU.W&nbsp;&nbsp;#2,D0</span></span></span></div></pre><p><strong>5.</strong> Typically, use a shift</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD.W&nbsp;&nbsp;&nbsp;D0,D0</span></span></span></div></pre><p><strong>Example</strong> Unpacking the number - divide 8-bit variable in two 4-bit nibbles (byte -&gt; word)</p>
+<p>So if we have <code style="font-family: Fira Mono;">$5F</code>, the resulting word is <code style="font-family: Fira Mono;">$050F</code>.</p>
+<p><em>Note</em>: The result needs to be initialized at 0.</p>
+<p>How do we isolate the nibbles? Shift the shit out of it!</p>
+<ol>
+<li>You can AND with <code style="font-family: Fira Mono;">$F0</code> and then <code style="font-family: Fira Mono;">LSR</code> by 4 to get <code style="font-family: Fira Mono;">$05</code></li>
+</ol>
+<p><strong>LOOK TO WEBSITE FOR ANSWERS</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;#0,result</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLR.W&nbsp;&nbsp;&nbsp;result</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>result&nbsp;&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div></pre></body>
+</html>
