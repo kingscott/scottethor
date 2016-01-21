@@ -1031,5 +1031,138 @@ Algorithm:</p>
 <li>You can AND with <code style="font-family: Fira Mono;">$F0</code> and then <code style="font-family: Fira Mono;">LSR</code> by 4 to get <code style="font-family: Fira Mono;">$05</code></li>
 </ol>
 <p><strong>LOOK TO WEBSITE FOR ANSWERS</strong></p>
-<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;#0,result</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLR.W&nbsp;&nbsp;&nbsp;result</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>result&nbsp;&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div></pre></body>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;#0,result</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLR.W&nbsp;&nbsp;&nbsp;result</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>result&nbsp;&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div></pre><h2 id="status-register">Status Register</h2>
+<ul>
+<li>Status = system byte (supervisor only) + user byte -&gt; system status + Condition code register</li>
+</ul>
+<p><em>Note</em>: Order of bits usually doesn&#39;t matter.</p>
+<p><strong>T</strong> (trace)</p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> in trace mode, <code style="font-family: Fira Mono;">0</code> otherwise<ul>
+<li>Single step instruction trace</li>
+</ul>
+</li>
+</ul>
+<p><strong>S</strong> (supervisor)</p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> in supervisor mode, <code style="font-family: Fira Mono;">0</code> is user mode</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>Looking at: <code style="font-family: Fira Mono;">STOP  #$2700</code>, actually flips <code style="font-family: Fira Mono;">S</code> bit to <code style="font-family: Fira Mono;">1</code></p>
+<p><strong>N</strong> (negative)</p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> is the most significant bit of an operand or result is 1</li>
+</ul>
+<p><strong>Z</strong> (zero)</p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> is all bits in the operand or result are <code style="font-family: Fira Mono;">0</code></li>
+</ul>
+<p><strong>V</strong> (overflow)</p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> if an out of range condition, overflow (in signed arithmetic)</li>
+</ul>
+<p><strong>C</strong> (carry)</p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> if a carry is generated out of the most significant bit during arithmetic operation (overflow in unsigned arithmetic)</li>
+</ul>
+<p><strong>X</strong> (extend)</p>
+<ul>
+<li>Used in multiple precision arithmetic</li>
+</ul>
+<p><strong>Example</strong> Binary arithmetic</p>
+<p>Unsigned:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>If&nbsp;we&nbsp;run:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>0011&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>+&nbsp;1110&nbsp;0000</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-----------</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1&nbsp;0001&nbsp;1010&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>58&nbsp;+&nbsp;224&nbsp;=&nbsp;282</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>The&nbsp;282&nbsp;is&nbsp;larger&nbsp;than&nbsp;8&nbsp;bits&nbsp;-&gt;&nbsp;overflow</span></span></span></div></pre><p>We have:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C&nbsp;=&nbsp;X&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>N&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Z&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>V&nbsp;=</span></span></span></div></pre><p>Signed:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>If&nbsp;we&nbsp;run:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>0011&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>+&nbsp;1110&nbsp;0000</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-----------</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1&nbsp;0001&nbsp;1010&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>58&nbsp;-&nbsp;32&nbsp;=&nbsp;26</span></span></span></div></pre><p>We have:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C&nbsp;=&nbsp;X&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>N&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Z&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>V&nbsp;=&nbsp;0</span></span></span></div></pre><p>Unsigned:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Now&nbsp;run:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>0011&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-&nbsp;1110&nbsp;0000</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-----------&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>0101&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>58&nbsp;-&nbsp;224&nbsp;=&nbsp;-166&nbsp;-&gt;&nbsp;but&nbsp;it&#39;s&nbsp;unsigned!&nbsp;WTF</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Note:&nbsp;C=1&nbsp;on&nbsp;unsigned&nbsp;subtraction&nbsp;means&nbsp;that&nbsp;#1&nbsp;&lt;&nbsp;#21</span></span></span></div></pre><p>We have:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C&nbsp;=&nbsp;X&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>N&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Z&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>V&nbsp;=</span></span></span></div></pre><p>Signed:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Now&nbsp;run:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>0011&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-&nbsp;1110&nbsp;0000</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-----------&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>0101&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>58&nbsp;+&nbsp;32&nbsp;=&nbsp;90</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Hey,&nbsp;this&nbsp;works!</span></span></span></div></pre><p><em>Note</em>: Just because you have a carry, doesn&#39;t mean you have a signed overflow.</p>
+<p>We have:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C&nbsp;=&nbsp;X&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>N&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Z&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>V&nbsp;=&nbsp;0</span></span></span></div></pre><p>Another:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>We&nbsp;run:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>0110&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>+&nbsp;0100&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-----------</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>1010&nbsp;1010</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>In&nbsp;unsigned,&nbsp;106&nbsp;+&nbsp;64&nbsp;=&nbsp;170,&nbsp;C=0&nbsp;-&gt;&nbsp;no&nbsp;overflow&nbsp;for&nbsp;unsigned.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>In&nbsp;signed,&nbsp;106&nbsp;+&nbsp;64&nbsp;=&nbsp;170&nbsp;(-86&nbsp;is&nbsp;shown).&nbsp;Thus,&nbsp;we&nbsp;have&nbsp;a&nbsp;signed&nbsp;overflow&nbsp;-&gt;&nbsp;V=1</span></span></span></div></pre><p>And thus:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C&nbsp;=&nbsp;X&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>N&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Z&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>V&nbsp;=&nbsp;1</span></span></span></div></pre><h4 id="using-condition-codes">Using Condition Codes</h4>
+<ul>
+<li>The machine does 2&#39;s complement and generates ALL flags</li>
+<li>The machine doesn&#39;t know if it is unsigned or signed</li>
+<li><strong>You</strong> pick the flags appropriate to your operation</li>
+</ul>
+<h3 id="valid-flags-for-unsigned-arithmetic">Valid Flags for Unsigned Arithmetic</h3>
+<p><strong>C</strong></p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> if result is incorrect, cannot be signed; <code style="font-family: Fira Mono;">0</code> if result is correct</li>
+</ul>
+<p><strong>Z</strong></p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> result is 0, <code style="font-family: Fira Mono;">0</code> result is not zero</li>
+</ul>
+<h3 id="conditional-branch">Conditional Branch</h3>
+<ul>
+<li>Needed for control flow and loops</li>
+</ul>
+<p>For unsigned arithmetic:</p>
+<table>
+<thead>
+<tr>
+<th>High</th>
+<th>Low</th>
+<th>meaning1</th>
+<th>meaning2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">BHI</code></td>
+<td><code style="font-family: Fira Mono;">BLS</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> high</td>
+<td><code style="font-family: Fira Mono;">Br</code> low/same</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BCC</code></td>
+<td><code style="font-family: Fira Mono;">BCS</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> C clear</td>
+<td><code style="font-family: Fira Mono;">Br</code> C set</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BHS*</code></td>
+<td><code style="font-family: Fira Mono;">BLO*</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> high same</td>
+<td><code style="font-family: Fira Mono;">Br</code> low</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BNE</code></td>
+<td><code style="font-family: Fira Mono;">BEQ</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> not equal</td>
+<td><code style="font-family: Fira Mono;">Br</code> equal</td>
+</tr>
+</tbody>
+</table>
+<h4 id="loops">Loops</h4>
+<ul>
+<li>Count usually goes down to zero (easy to compute)</li>
+</ul>
+<p>Steps for assembly loop:</p>
+<ol>
+<li>Initialize count register (ideal m8)<ul>
+<li>Decrement count</li>
+<li><code style="font-family: Fira Mono;">{body of loop}</code></li>
+<li><code style="font-family: Fira Mono;">BNE   loop</code></li>
+</ul>
+</li>
+<li>Initialize count register (check against 0 - skip loop)<ul>
+<li><code style="font-family: Fira Mono;">BEQ   skip</code></li>
+<li><code style="font-family: Fira Mono;">{body of loop}</code></li>
+<li>Decrement count</li>
+<li><code style="font-family: Fira Mono;">BNE   loop</code></li>
+<li><code style="font-family: Fira Mono;">skip  {rest of the code}</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>Example</strong> Write a program to calculate x^y given <code style="font-family: Fira Mono;">x</code> and <code style="font-family: Fira Mono;">y</code>.</p>
+<p><em>Note</em>: Need to switch to word because of <code style="font-family: Fira Mono;">MULU</code></p>
+<ul>
+<li>Inputs: <code style="font-family: Fira Mono;">x, y</code> (W)</li>
+<li>Output: <code style="font-family: Fira Mono;">answer</code> (W)</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;D0,D2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;x,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;grab&nbsp;base&nbsp;number</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;y,D1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;count&nbsp;(exponent)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUBI.W&nbsp;&nbsp;&nbsp;&nbsp;#1,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BEQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skip</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;&nbsp;&nbsp;MULU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,D2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>SUBI.W&nbsp;&nbsp;&nbsp;&nbsp;#1,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BNE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>skip&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;D0,answer</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div></pre></body>
 </html>
