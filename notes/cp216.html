@@ -1135,6 +1135,30 @@ Algorithm:</p>
 <td><code style="font-family: Fira Mono;">Br</code> not equal</td>
 <td><code style="font-family: Fira Mono;">Br</code> equal</td>
 </tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BVC</code></td>
+<td><code style="font-family: Fira Mono;">BVS</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> V clear</td>
+<td><code style="font-family: Fira Mono;">Br</code> V set</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BPL</code></td>
+<td><code style="font-family: Fira Mono;">BMI</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> plus</td>
+<td><code style="font-family: Fira Mono;">Br</code> minus</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BGE</code></td>
+<td><code style="font-family: Fira Mono;">BLT</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> &gt;=</td>
+<td><code style="font-family: Fira Mono;">Br</code> &lt;</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BGT</code></td>
+<td><code style="font-family: Fira Mono;">BLE</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> &gt;</td>
+<td><code style="font-family: Fira Mono;">Br</code> &lt;=</td>
+</tr>
 </tbody>
 </table>
 <h4 id="loops">Loops</h4>
@@ -1164,5 +1188,191 @@ Algorithm:</p>
 <li>Inputs: <code style="font-family: Fira Mono;">x, y</code> (W)</li>
 <li>Output: <code style="font-family: Fira Mono;">answer</code> (W)</li>
 </ul>
-<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;D0,D2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;x,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;grab&nbsp;base&nbsp;number</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;y,D1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;count&nbsp;(exponent)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUBI.W&nbsp;&nbsp;&nbsp;&nbsp;#1,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BEQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skip</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;&nbsp;&nbsp;MULU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,D2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>SUBI.W&nbsp;&nbsp;&nbsp;&nbsp;#1,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BNE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>skip&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;D0,answer</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div></pre></body>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;D0,D2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;x,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;grab&nbsp;base&nbsp;number</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;y,D1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;count&nbsp;(exponent)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUBI.W&nbsp;&nbsp;&nbsp;&nbsp;#1,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BEQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skip</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;&nbsp;&nbsp;MULU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,D2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>SUBI.W&nbsp;&nbsp;&nbsp;&nbsp;#1,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BNE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>skip&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;D0,answer</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div></pre><h3 id="valid-flags-for-signed-arithmetic">Valid Flags for Signed Arithmetic</h3>
+<p><strong>V</strong></p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> if result is incorrect (signed overflow), <code style="font-family: Fira Mono;">0</code> is result is correct</li>
+</ul>
+<p><strong>Z</strong></p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> if result is zero, <code style="font-family: Fira Mono;">0</code> if result is zero</li>
+</ul>
+<p><strong>N</strong></p>
+<ul>
+<li><code style="font-family: Fira Mono;">1</code> is result is negative, <code style="font-family: Fira Mono;">0</code> if result is positive (includes zero)</li>
+</ul>
+<h3 id="decision-structures">Decision Structures</h3>
+<p>Pseudo code:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>if&nbsp;*condition*&nbsp;then</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;A</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end&nbsp;if</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;B</span></span></span></div></pre><p>In assembly:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>test&nbsp;condition</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Bcondition&nbsp;&nbsp;label</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>code&nbsp;A</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>label</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>code&nbsp;B</span></span></span></div></pre><p>Checking against a <code style="font-family: Fira Mono;">num = 0</code> condition:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.B&nbsp;&nbsp;num,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BNE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skip</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;A</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>skip&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;B</span></span></span></div></pre><h4 id="testing-conditions">Testing Conditions</h4>
+<p>We have: <code style="font-family: Fira Mono;">CMP  &lt;ea&gt;,Dn</code></p>
+<ul>
+<li>Result is not stored (like <code style="font-family: Fira Mono;">SUB</code> without final store)</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;#5,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CMP.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#6,d0</span></span></span></div></pre><p>With:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C&nbsp;=&nbsp;X&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>N&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Z&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>V&nbsp;=&nbsp;0</span></span></span></div></pre><p>We also have: <code style="font-family: Fira Mono;">TST  &lt;ea&gt;,Dn</code></p>
+<ul>
+<li>Checks if operand is negative</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;#-1,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TST.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0</span></span></span></div></pre><p>And:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>C&nbsp;=&nbsp;X&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>N&nbsp;=&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Z&nbsp;=&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>V&nbsp;=&nbsp;0</span></span></span></div></pre><h3 id="conditional-branch-bcc-condition-code-">Conditional Branch (<code style="font-family: Fira Mono;">Bcc</code> - condition code)</h3>
+<table>
+<thead>
+<tr>
+<th>High</th>
+<th>Low</th>
+<th>meaning1</th>
+<th>meaning2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code style="font-family: Fira Mono;">BVC</code></td>
+<td><code style="font-family: Fira Mono;">BVS</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> V clear</td>
+<td><code style="font-family: Fira Mono;">Br</code> V set</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BPL</code></td>
+<td><code style="font-family: Fira Mono;">BMI</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> plus</td>
+<td><code style="font-family: Fira Mono;">Br</code> minus</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BGE</code></td>
+<td><code style="font-family: Fira Mono;">BLT</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> &gt;=</td>
+<td><code style="font-family: Fira Mono;">Br</code> &lt;</td>
+</tr>
+<tr>
+<td><code style="font-family: Fira Mono;">BGT</code></td>
+<td><code style="font-family: Fira Mono;">BLE</code></td>
+<td><code style="font-family: Fira Mono;">Br</code> &gt;</td>
+<td><code style="font-family: Fira Mono;">Br</code> &lt;=</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decision-structures-2">Decision Structures 2</h3>
+<p>In pseudo-code:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>if&nbsp;*condition*&nbsp;then</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;A</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>else</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;B</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end&nbsp;if</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;C</span></span></span></div></pre><p>In assembly:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>test&nbsp;condition</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Bcond&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;A&nbsp;(condition&nbsp;is&nbsp;true)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>BRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>label1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;B&nbsp;(conditions&nbsp;is&nbsp;false)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>label</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;C</span></span></span></div></pre><h3 id="testing-for-out-of-range-results">Testing for Out of Range Results</h3>
+<ul>
+<li>We are responsible for out of range conditions</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>perform&nbsp;arithmetic&nbsp;operation</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>|</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(input)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>result/data&nbsp;in&nbsp;range&nbsp;&nbsp;&nbsp;&nbsp;__&nbsp;&nbsp;NO&nbsp;(error)&nbsp;-&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>|</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;YES</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>continue&nbsp;processing</span></span></span></div></pre><h3 id="loops">Loops</h3>
+<p>In pseudo-code:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>while&nbsp;condition&nbsp;do</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;A</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end&nbsp;while</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;B</span></span></span></div></pre><p>In assembly:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>test&nbsp;condition</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bcond&nbsp;&nbsp;&nbsp;label</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;A</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>[modify&nbsp;condition]</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>label</span></span></span></div></pre><p>OR:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>test&nbsp;condition</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Bcond&nbsp;&nbsp;&nbsp;label</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>label1&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;A</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>[modify&nbsp;condition]</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bcond&nbsp;&nbsp;&nbsp;label1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;code&nbsp;B</span></span></span></div></pre><p><strong>Example</strong> If a 16 bit number is negative, generate the absolute value of the number and store the result in the original number&#39;s memory location.</p>
+<ul>
+<li>Input: <code style="font-family: Fira Mono;">num</code> (W)  --&gt; <code style="font-family: Fira Mono;">$1234</code></li>
+<li>Output: <code style="font-family: Fira Mono;">num</code> (W) --&gt; <code style="font-family: Fira Mono;">$1234</code></li>
+<li>Alg: if <code style="font-family: Fira Mono;">num</code> is negative -&gt; <code style="font-family: Fira Mono;">NEG</code></li>
+</ul>
+<p>One way:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;num,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;number</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BPL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skip_neg</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEG.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;D0,num</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>skip_neg&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><p>Difference approach:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>TST.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;test&nbsp;against&nbsp;negative</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BPL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skip_neg</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEG.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>skip_neg&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><p><strong>Example</strong> Find the larger of two 32 bit numbers</p>
+<ul>
+<li>Input: <code style="font-family: Fira Mono;">num1</code>, <code style="font-family: Fira Mono;">num2</code> (L)</li>
+<li>Output: <code style="font-family: Fira Mono;">max</code> (L)</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.L&nbsp;&nbsp;&nbsp;&nbsp;num1,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CMP.L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BMI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num1max</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.L&nbsp;&nbsp;&nbsp;&nbsp;num2,max</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>num1max&nbsp;MOVE.L&nbsp;&nbsp;&nbsp;&nbsp;D0.max</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div></pre><h2 id="subroutines">Subroutines</h2>
+<ul>
+<li>Procedures, or functions in high level languges are modeled on subroutines</li>
+<li>Assembly code is usually very modular</li>
+<li><code style="font-family: Fira Mono;">JSR</code>, jump to subroutine, used to call subroutine</li>
+<li><code style="font-family: Fira Mono;">RTS</code>, return from subroutine</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>MAIN&nbsp;&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg1,A1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;point&nbsp;to&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRT_S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;jump&nbsp;to&nbsp;subroutine&nbsp;PRT_S</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg2,A2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;point&nbsp;to&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRT_S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;call&nbsp;SR</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STOP&nbsp;&nbsp;&nbsp;&nbsp;#$2700&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>PRT_S&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>RTS</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>msg1&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>msg2&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>END&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAIN</span></span></span></div></pre><ol>
+<li>Jump to subroutine:  <code style="font-family: Fira Mono;">JSR    &lt;ea&gt;</code><ul>
+<li>Unlimited addressing range</li>
+<li>Stores status register address in machine code</li>
+</ul>
+</li>
+<li>Branch to subroutine:   <code style="font-family: Fira Mono;">BSR    &lt;ea&gt;</code><ul>
+<li>Smaller machine code, limited addressing range</li>
+<li>Stores the displacement from the current instruction</li>
+</ul>
+</li>
+</ol>
+<h3 id="key-registers">Key Registers</h3>
+<h4 id="pc-program-counter-aka-ip-instruction-pointer-">PC: Program Counter (aka IP: instruction pointer)</h4>
+<ul>
+<li>Contains the address of the next instruction to be executed</li>
+<li>To keep track of where we are in the program<ul>
+<li>Sends the PC to memory</li>
+<li>While memory is retrieving the instruction, PC is instructed to point to new instruction</li>
+<li>Memory returns instruction</li>
+<li>CPU executes instruction</li>
+</ul>
+</li>
+</ul>
+<h4 id="a7-stack-pointer-sp-">A7: Stack Pointer (SP)</h4>
+<ul>
+<li>Not used as a regular status register, used as <em>system stack pointer</em></li>
+<li>In supervisor mode: <code style="font-family: Fira Mono;">SSP</code> (supervisor stack pointer)<ul>
+<li>Used <code style="font-family: Fira Mono;">USP</code> to access user stack pointer</li>
+</ul>
+</li>
+<li>If you are in user mode, <code style="font-family: Fira Mono;">USP</code><ul>
+<li><code style="font-family: Fira Mono;">SSP</code> not visible in this mode</li>
+</ul>
+</li>
+<li><code style="font-family: Fira Mono;">SSP</code> and <code style="font-family: Fira Mono;">USP</code> are physically separate registers</li>
+</ul>
+<h4 id="register-transfer-language-with-jsr-rts">Register Transfer Language with JSR/RTS</h4>
+<p>JSR:</p>
+<ol>
+<li>Save program counter on stack</li>
+<li>Execution continues at specified address</li>
+</ol>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(SP)&nbsp;&lt;-&nbsp;(SP)&nbsp;-&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>((SP))&nbsp;&lt;-&nbsp;(PC)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(PC)&nbsp;&lt;-&nbsp;address</span></span></span></div></pre><p>RTS:</p>
+<ul>
+<li>RTS - get PC from stack and return</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(PC)&nbsp;&lt;-&nbsp;((SP))</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(SP)&nbsp;&lt;-&nbsp;(SP)&nbsp;+&nbsp;4</span></span></span></div></pre><ul>
+<li>Return and restore (RTR) condition codes<ul>
+<li>Get conditions from stack</li>
+<li>Get PC from stack and return</li>
+</ul>
+</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(CCR)&nbsp;&lt;-&nbsp;((SP))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;((...))&nbsp;store</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(SP)&nbsp;&lt;-&nbsp;(SP)&nbsp;+&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(PC)&nbsp;&lt;-&nbsp;((SP))</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>(SP)&nbsp;&lt;-&nbsp;(SP)&nbsp;+&nbsp;4</span></span></span></div></pre><ul>
+<li>Stacks grows down in memory</li>
+<li>SP points to the last filled location in the stack</li>
+</ul>
+<p>Memory map:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>0000&nbsp;&nbsp;&nbsp;-&nbsp;reserved</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>03FF&nbsp;&nbsp;&nbsp;-&nbsp;reserved</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>0400&nbsp;&nbsp;&nbsp;-&nbsp;START</span></span></span></div></pre><p>Like this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4FFC&nbsp;&nbsp;&nbsp;&lt;-&nbsp;(SP)&nbsp;-&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4FFD&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4FFE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;these&nbsp;four&nbsp;rows&nbsp;are&nbsp;PC3</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4FFF</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>5000</span></span></span></div></pre><h4 id="defining-the-system-stack">Defining the System Stack</h4>
+<ol>
+<li>If there is any operating system, the operating system will initialize the SP</li>
+<li>If there is a monitor program, check the SSP/USP registers</li>
+<li>If there is no monitor program, if it doesn&#39;t initialize SSP/USP, it is the programmer&#39;s responsibility to initialize the USP/SSP in the 1st line of the program:<ul>
+<li>If stack is at <code style="font-family: Fira Mono;">$10000</code>, use:</li>
+</ul>
+</li>
+</ol>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>LEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$10000,A7</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>LEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$10000,SP</span></span></span></div></pre><h4 id="saving-restoring-context">Saving/Restoring Context</h4>
+<ul>
+<li>Programmer&#39;s responsibility to save registers when entering the status register and restore registers when exiting the SR<ul>
+<li>Save registers that the SR will modify</li>
+<li>Don&#39;t save registers that are used to pass values</li>
+</ul>
+</li>
+<li>Save/restore registers with move multiple</li>
+<li><code style="font-family: Fira Mono;">MOVEM.L   D0-D3/A2-A5,-(SP)</code><ul>
+<li>Restored as: <code style="font-family: Fira Mono;">A7 -&gt; A0</code> and <code style="font-family: Fira Mono;">D7 -&gt; D0</code></li>
+</ul>
+</li>
+<li><code style="font-family: Fira Mono;">MOVEM.L   (SP)+,D0-D3/A2-A5</code><ul>
+<li>Restored as: <code style="font-family: Fira Mono;">D0 -&gt; D7</code> and <code style="font-family: Fira Mono;">A0 -&gt; A7</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>MAIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$10000,A7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&lt;-&nbsp;initialize&nbsp;SP</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;not&nbsp;necessary&nbsp;for&nbsp;EASY68K</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND_MIN</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.L&nbsp;&nbsp;&nbsp;&nbsp;D0,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>FIND_MIN&nbsp;&nbsp;&nbsp;&nbsp;MOVEM.L&nbsp;&nbsp;&nbsp;D0-D3/A5,-(SP)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;save&nbsp;registers</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEM.L&nbsp;&nbsp;&nbsp;(SP)+,D0-D3/A5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;restore&nbsp;registers</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RTS</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>END&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAIN</span></span></span></div></pre></body>
 </html>
