@@ -191,6 +191,9 @@ pre.editor-colors .fold-marker:after,
   color: #5c6370;
   font-style: italic;
 }
+.comment .markup.link {
+  color: #5c6370;
+}
 .entity.name.type {
   color: #e5c07b;
 }
@@ -353,6 +356,9 @@ pre.editor-colors .fold-marker:after,
 .meta.tag {
   color: #abb2bf;
 }
+.underline {
+  text-decoration: underline;
+}
 .none {
   color: #abb2bf;
 }
@@ -378,14 +384,17 @@ pre.editor-colors .fold-marker:after,
   color: #c678dd;
   font-style: italic;
 }
+.markup.heading {
+  color: #e06c75;
+}
 .markup.heading .punctuation.definition.heading {
   color: #61afef;
 }
+.markup.link {
+  color: #c678dd;
+}
 .markup.inserted {
   color: #98c379;
-}
-.markup.list {
-  color: #e06c75;
 }
 .markup.quote {
   color: #d19a66;
@@ -406,12 +415,6 @@ pre.editor-colors .fold-marker:after,
 }
 .source.gfm .markup {
   -webkit-font-smoothing: auto;
-}
-.source.gfm .markup.heading {
-  color: #e06c75;
-}
-.source.gfm .markup.link {
-  color: #c678dd;
 }
 .source.gfm .link .entity {
   color: #61afef;
@@ -1543,6 +1546,194 @@ Algorithm:</p>
 <pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>LEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str,A0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;point&nbsp;to&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#0,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;clear&nbsp;str&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#99,D2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;string&nbsp;max&nbsp;=&nbsp;100&nbsp;chars&nbsp;--&gt;&nbsp;ideally&nbsp;written&nbsp;as&nbsp;#100-1&nbsp;-&nbsp;this&nbsp;happens&nbsp;at&nbsp;compile&nbsp;so&nbsp;we&nbsp;are&nbsp;fine,&nbsp;it&nbsp;sees&nbsp;99</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;CMPI.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$0D,(A0)+&nbsp;&nbsp;;&nbsp;carriage&nbsp;return&nbsp;or</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>DBEQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D2,incr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;max&nbsp;string&nbsp;length?</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,str_l&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;yes,&nbsp;save&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;and&nbsp;exit</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>incr&nbsp;&nbsp;ADDQ.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#1,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;no,&nbsp;increment&nbsp;len&nbsp;cnt</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>BRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;and&nbsp;check&nbsp;next&nbsp;char</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done&nbsp;…</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>…</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$#2700</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>str&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;Hi!&#39;,$0D</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>str_l&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div></pre><p>Variation 2: Better...</p>
 <pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>LEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str,A0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;point&nbsp;to&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEQ.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#-1,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;initialize&nbsp;length&nbsp;cnt</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#99,D2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;and&nbsp;string&nbsp;max&nbsp;=&nbsp;100</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;ADDQ.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#1,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;increment&nbsp;length&nbsp;count</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>CMPI.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$0D,(A0)+&nbsp;&nbsp;&nbsp;;carriage&nbsp;return&nbsp;or</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DBEQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D2,loop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;max&nbsp;str&nbsp;len?&nbsp;no,loop</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,str_l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;yes,&nbsp;save&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>…</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>str&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;Hi!&#39;,$0D</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>str_l&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div></pre><p>Variation 3: Professional</p>
 <pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>LEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str,A0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;point&nbsp;to&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#99,D2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;initialize&nbsp;str&nbsp;max=100</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D2,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;and&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;CMPI.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$0D,(A0)+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&lt;cr&gt;&nbsp;or&nbsp;max&nbsp;str&nbsp;len?</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>DBEQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,loop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;no,&nbsp;loop</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUB.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,D2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;yes,&nbsp;calc&nbsp;str&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D2,str_l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;and&nbsp;store</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>…</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>str&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;Hi!&#39;,$0D</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>str_l&nbsp;DS.W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span></span></span></div></pre><h2 id="ieee-floating-point-arithmetic">IEEE Floating Point Arithmetic</h2>
-<p>Sign      Exponents     Fraction
- 1 bit      8 bits        23 bits</p></body>
+<p>Sign      Exponents     Fraction    (Mantissa)
+ 1 bit      8 bits        23 bits</p>
+<h2 id="decimal-arithmetic">Decimal Arithmetic</h2>
+<ul>
+<li>Numbers are stored as a series of base 10 digits<ul>
+<li>BCD* or decimal arithmetic</li>
+</ul>
+</li>
+</ul>
+<p>There are two formats for BCD:</p>
+<ul>
+<li>Unpacked, where 8 bits = 1 decimal digit<ul>
+<li>Ex. 1985<sub>10</sub> = <code style="font-family: Fira Mono;">%0000 0001 0000 1001 0000 1000 0000 0101</code></li>
+</ul>
+</li>
+<li>Packed, where 8 bits = 2 decimal digits<ul>
+<li>Ex. 1985<sub>10</sub>: <code style="font-family: Fira Mono;">%0001 1001 1000 0101</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="why-bcd-">Why BCD?</h3>
+<ul>
+<li>I/O systems are usually ASCII and keypad systems are BCD</li>
+<li>Arithmetic operations:<ul>
+<li>Work on one byte at a time</li>
+<li>Assume packed BCD --&gt; 8 bits = 2 decimal bytes</li>
+<li>Unpacked BCD is only used in transition from ASCII to BCD --&gt; 8 bits = 1 decimal digit in low nibble</li>
+</ul>
+</li>
+</ul>
+<h4 id="operations-with-bcd">Operations with BCD</h4>
+<ul>
+<li>Start at the least significant byte work towards the most significant byte</li>
+<li>Carry handled using <code style="font-family: Fira Mono;">X</code></li>
+</ul>
+<p><strong>Example</strong> A+BCD</p>
+<p>(source)<sub>10</sub> + (dest)<sub>10</sub> + X -&gt; dest<sub>10</sub></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>11&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>$19&nbsp;85</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>$34&nbsp;59</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>------</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>54&nbsp;44</span></span></span></div></pre><pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>0000&nbsp;1000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$8</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>0000&nbsp;1001&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;$9</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>---------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>0001&nbsp;0001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$17</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>^&nbsp;That&nbsp;looks&nbsp;like&nbsp;$11?</span></span></span></div></pre><p>If we ever have a carry from bit 3 to 4, like we do here, we need to add to the low nibble.</p>
+<h3 id="flags-for-bcd">Flags for BCD</h3>
+<ul>
+<li>Clear <code style="font-family: Fira Mono;">X</code> (extended carry) before first BCD operation so that carry is handled correctly</li>
+<li><code style="font-family: Fira Mono;">N</code> and <code style="font-family: Fira Mono;">V</code> are undefined for decimal arithmetic<ul>
+<li>Sign is explicitly handled during the operation</li>
+</ul>
+</li>
+<li><code style="font-family: Fira Mono;">C</code> and <code style="font-family: Fira Mono;">X</code> is set if decimal carry/borrow occurs<ul>
+<li>Can be used to construct result if overflow</li>
+</ul>
+</li>
+<li><code style="font-family: Fira Mono;">Z</code> is changed if the result is nonzero; otherwise unchanged<ul>
+<li>For addition, set <code style="font-family: Fira Mono;">Z</code> to 1 before first BCD operation to obtain the correct <code style="font-family: Fira Mono;">Z</code> (optional)</li>
+<li>No requirement to initialize <code style="font-family: Fira Mono;">Z</code> if it is not important to the problem</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong> Add two numbers (<code style="font-family: Fira Mono;">bcdn1</code> and <code style="font-family: Fira Mono;">bcdn2</code>) and store the result in <code style="font-family: Fira Mono;">bcdn2</code></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;org&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>clr.w&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move.b&nbsp;&nbsp;&nbsp;&nbsp;length,D2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subq.w&nbsp;&nbsp;&nbsp;&nbsp;#1,D2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;stored&nbsp;as&nbsp;byte&nbsp;but&nbsp;used&nbsp;as&nbsp;a&nbsp;word</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bcdn1+4,A1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bcdn2+4,A0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move.b&nbsp;&nbsp;&nbsp;&nbsp;#$04,CCR</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>loop&nbsp;&nbsp;abcd.b&nbsp;&nbsp;&nbsp;&nbsp;-(A1),-(A0)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>dbra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D2,loop</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>stop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>bcdn1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$36701985</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>bcdn2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12663459</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>length&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end&nbsp;start</span></span></span></div></pre><h3 id="bcd-complements">BCD Complements</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>BCD</th>
+<th></th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9&#39;s complement</td>
+<td>99-num = ...</td>
+<td>1&#39;s complement</td>
+<td>Flip all of the bits 0011 -&gt; 1100 or 1111 - 0011</td>
+</tr>
+<tr>
+<td>10&#39;s complement</td>
+<td>$00 - $num = ...</td>
+<td>2&#39;s complement</td>
+<td>1&#39;s complement + 1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong> Subtractions!</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>9999</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-&nbsp;4930</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>------</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>5069&nbsp;&nbsp;--&gt;&nbsp;ok&nbsp;if&nbsp;unsigned!&nbsp;otherwise&nbsp;-4931&nbsp;(which&nbsp;is&nbsp;10&#39;s&nbsp;complement&nbsp;of&nbsp;5069)</span></span></span></div></pre><h2 id="logical-operations">Logical Operations</h2>
+<ul>
+<li>Bitwise logical operations are: <code style="font-family: Fira Mono;">AND</code>, <code style="font-family: Fira Mono;">OR</code>, <code style="font-family: Fira Mono;">EOR</code>, <code style="font-family: Fira Mono;">NOT</code></li>
+</ul>
+<h3 id="bit-operations">Bit Operations</h3>
+<ul>
+<li>Instructions operate on one bit in D<sub>n</sub></li>
+</ul>
+<h4 id="set-according-to-condition">Set According to Condition</h4>
+<ul>
+<li><code style="font-family: Fira Mono;">Scc</code>: set byte according to cc</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>if&nbsp;(condition&nbsp;true)&nbsp;then</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>destination&nbsp;&lt;-&nbsp;$FF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Set&nbsp;to&nbsp;&#39;true&#39;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>else</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>destination&nbsp;&lt;-&nbsp;$00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Set&nbsp;to&nbsp;&#39;false&#39;</span></span></span></div></pre><h2 id="passing-data-registers-in-subroutines">Passing Data (Registers) in Subroutines</h2>
+<p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>move.w&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#5,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v_delay</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>v_delay&nbsp;&nbsp;&nbsp;move.l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,-(SP)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>d_loop&nbsp;&nbsp;&nbsp;&nbsp;nop</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>dbra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,d_loop</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move.l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SP)+,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rts</span></span></span></div></pre><p><strong>Example</strong> Finding the median</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>lea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data,A0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clr.l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move.b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_l,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f_median</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move.b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D1,median</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>stop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>f_median&nbsp;&nbsp;movem.l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0/A0,-(SP)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>lsr.b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#1,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bcs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;odd_r</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;even</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>odd_r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;odd</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>done&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movem.l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SP)+,D0/A0</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>even&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add.l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,A0</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>move.b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A0),D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add.b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-(A0),D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lsr.b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#1,D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rts</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>odd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add.l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D0,A0</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>move.b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A0),D1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rts</span></span></span></div></pre><h2 id="addressing-modes-on-address-registers-">Addressing Modes (on Address Registers)</h2>
+<ol>
+<li>Immediate: <code style="font-family: Fira Mono;">#&lt;data&gt;</code><ul>
+<li>Data is part of the instruction</li>
+</ul>
+</li>
+<li>Register direct: D<sub>n</sub> or A<sub>n</sub><ul>
+<li>Data is in the register</li>
+<li>The address of the data is the register number</li>
+</ul>
+</li>
+<li>Memory direct: <code style="font-family: Fira Mono;">(xxx).W</code> or <code style="font-family: Fira Mono;">(xxx).L</code><ul>
+<li>Data is in the memory location</li>
+<li>The address of the data is the address in the memory location</li>
+</ul>
+</li>
+<li>Address register indirect (A<sub>n</sub>)</li>
+<li>Postincrement: (A<sub>n</sub>+)<ul>
+<li>The address of the data is in the address register</li>
+</ul>
+</li>
+<li>Predecrement: -(A<sub>n</sub>)<ul>
+<li>The address of the data is in the contents of the address register minus the decrement</li>
+</ul>
+</li>
+<li>Address register indirect with displacement: d(A<sub>n</sub>)<ul>
+<li>Operand is written as d(A<sub>n</sub>), where d = 16 bit displacement</li>
+<li>The address of the data is the sum of the address register and displacement</li>
+</ul>
+</li>
+<li>Address register indirect with indexing: d(A<sub>n</sub>, R<sub>n</sub>)<ul>
+<li>Operand is written as d(A<sub>n</sub>, R<sub>m</sub>{.W|.L}); where d = 8 bit displacement and R<sub>m</sub> is an index register (W or L)</li>
+<li>The address of the data is the sum of the address register, the index register and the displacement</li>
+</ul>
+</li>
+<li>Program counter relative w/ displacement: <code style="font-family: Fira Mono;">d(PC)</code><ul>
+<li>Operand is written as d(PC) where d = 16 bit displacement</li>
+<li>The address of the data is the sum of the program counter and the displacement</li>
+</ul>
+</li>
+<li>Program counter relative w/ indexing: d(PC, R<sub>n</sub>)<ul>
+<li>Operand is written as d(PC, R<sub>i</sub>{.W|.L}) where d = 8 bit displacement</li>
+<li>The address of the data is the sum of the PC, the index register and the displacement</li>
+</ul>
+</li>
+</ol>
+<h3 id="position-independent">Position Independent</h3>
+<ul>
+<li>Code can be loaded and executed from any starting address in memory after it has been assembled; address assigned at run time<ul>
+<li>Static --&gt; assembly, ex. shared library, ROM based program</li>
+<li>Dynamic --&gt; can be moved after it has started execution, ex. virtual system memory</li>
+</ul>
+</li>
+<li>No absolute addresses except for hardware device addresses</li>
+<li>PC-relative addressing is used wherever possible for branches within modules</li>
+<li>Where PC-relative addressing cannot be used, indirect addressing through a linkage table is used for accesses to global variables,               for inter-module procedure calls, for branches and literal accesses<ul>
+<li>The dynamic loader fills in procedure and data linkage tables with the absolute virtual addresses of the routines and data in a shared library at run time (known as binding)</li>
+</ul>
+</li>
+</ul>
+<h3 id="relocatable-vs-non-relocatable-code">Relocatable vs Non-Relocatable Code</h3>
+<ul>
+<li><p>Relocatable code</p>
+<ul>
+<li>Code can be moved to a different starting address but requires reassembly</li>
+<li>Code contains symbols but no explicit addresses (except hardware)</li>
+<li>Addresses assigned at link time</li>
+</ul>
+</li>
+<li><p>Non-relocatable code</p>
+<ul>
+<li>Code requires reprogramming to be moved to a different memory location</li>
+<li>Code contains actual addresses</li>
+<li>Addresses assigned during programming</li>
+</ul>
+</li>
+</ul>
+<h2 id="subroutines-again">Subroutines...again</h2>
+<h3 id="passing-data-in-code-stream-section">Passing Data in Code Stream/Section</h3>
+<ul>
+<li>Parameters placed directly after the subroutine call</li>
+</ul>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>JSR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FINDMIN</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;list</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;D0,MIN</span></span></span></div></pre><ul>
+<li>Use standard DC assembler directives without labels</li>
+<li>Parameters <em>must</em> be fixed when program is written</li>
+<li>Must adjust the return address so that return is to executable code and not the data area</li>
+</ul>
+<p><strong>Example</strong> Call subroutine to compare two buffers, passing buffer length and pointers to two buffers</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>JSR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUF_CMP</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;256</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>DC.L&nbsp;&nbsp;&nbsp;&nbsp;BUFB</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUF_CMP&nbsp;&nbsp;&nbsp;MOVEM.L&nbsp;D0/A0-A2,-(SP)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVEA.L&nbsp;16(SP),A2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;move&nbsp;pointer&nbsp;to&nbsp;data&nbsp;area</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;(A2),D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;buffer&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEA.L&nbsp;(A2)+,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;buffer1&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEA.L&nbsp;(A2),A1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;buffer2&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.L&nbsp;&nbsp;A2,16(SP)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;correct&nbsp;the&nbsp;return&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.L&nbsp;&nbsp;(SP)+,D0/A0-A2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUFA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUFB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div></pre><p>Another example:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>JSR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUF_CMP</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;PLIST</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUF_CMP&nbsp;&nbsp;&nbsp;MOVEM.L&nbsp;D0/A0-A2,-(SP)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVEA.L&nbsp;16(SP),A1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;address&nbsp;to&nbsp;param&nbsp;block</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEA.L&nbsp;(A1)+,A2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;point&nbsp;to&nbsp;param&nbsp;block</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.L&nbsp;&nbsp;A1,16(SP)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;(A2)+,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;buffer&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEA.L&nbsp;(A2)+,A0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;buffer&nbsp;1&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEA.L&nbsp;(A2)+,A1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;buffer&nbsp;2&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>PLIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;256&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;buffer&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>DC.L&nbsp;&nbsp;&nbsp;&nbsp;BUFA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;buffer&nbsp;1&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;BUFB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;buffer&nbsp;2&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUFA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUFB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div></pre><h3 id="passing-data-on-the-stack">Passing Data on the Stack</h3>
+<p><strong>Example</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>PEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLIST</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.L&nbsp;&nbsp;#PLIST,-(SP)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUF_CMP</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADDA.L&nbsp;&nbsp;#4,SP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;need&nbsp;to&nbsp;manually&nbsp;adjust&nbsp;the&nbsp;SP&nbsp;outside&nbsp;the&nbsp;SR</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUF_CMP&nbsp;&nbsp;&nbsp;MOVEM.L&nbsp;D0/A0-A2,-(SP)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVEA.L&nbsp;20(SP),A2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;address&nbsp;of&nbsp;the&nbsp;param&nbsp;block</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.W&nbsp;&nbsp;(A2)+,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;or&nbsp;(A2),D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEA.L&nbsp;(A2)+,A0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;or&nbsp;2(A2),A0</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVEM.L&nbsp;(SP)+,D0/A0-A2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RTS</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>PLIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.W&nbsp;&nbsp;&nbsp;&nbsp;256&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;buffer&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>DC.L&nbsp;&nbsp;&nbsp;&nbsp;BUFA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;buffer&nbsp;1&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;BUFB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;buffer&nbsp;2&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUFA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUFB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div></pre><p>Another way:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;#256,-(SP)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;push&nbsp;buff&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUFA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;push&nbsp;buffer&nbsp;1&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.L&nbsp;&nbsp;#BUFB,-(SP)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;push&nbsp;buffer&nbsp;2&nbsp;address</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUF_CMP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;go&nbsp;compare&nbsp;buffers</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADDA.L&nbsp;&nbsp;#10,SP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;adjust&nbsp;stack&nbsp;pointer</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUF_CMP&nbsp;&nbsp;&nbsp;MOVEM.L&nbsp;D0/A0-A2,-(SP)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.W&nbsp;&nbsp;28(SP),D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;get&nbsp;buffer&nbsp;length</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVEM.L&nbsp;(SP)+,D0/A0-A2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RTS</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUFA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUFB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DS.L&nbsp;&nbsp;&nbsp;&nbsp;500</span></span></span></div></pre></body>
 </html>
