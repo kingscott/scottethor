@@ -1874,5 +1874,79 @@ Algorithm:</p>
 <pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$64</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;HW1</span></span></span></div></pre><p>OR</p>
 <p>Happens at execution time:</p>
 <pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>...</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVE.L&nbsp;&nbsp;#HW1,$64</span></span></span></div></pre><p><strong>Example</strong> Turn off LEDs when interrupt 1 is pressed</p>
-<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>LEDS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EQU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E00010</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$64</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HW1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVEM.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$FF,LEDS</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOP</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>BRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>HW1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#0,LEDS</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>RTE</span></span></span></div></pre></body>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>LEDS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EQU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E00010</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$64</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DC.L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HW1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>START&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1000</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>MOVEM.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$FF,LEDS</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>loop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOP</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>BRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>HW1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE.B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#0,LEDS</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>RTE</span></span></span></div></pre><h2 id="exceptions-part-2-">Exceptions (Part 2)</h2>
+<h3 id="basic-instruction-cycle">Basic Instruction Cycle</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>,-------------------&nbsp;other&nbsp;instruction&nbsp;----------,</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>start&nbsp;--&gt;&nbsp;fetch&nbsp;instruction&nbsp;--&gt;&nbsp;execute&nbsp;instruction&nbsp;--&gt;&nbsp;STOP</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>fetch&nbsp;cycle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;execute&nbsp;cycle</span></span></span></div></pre><h3 id="interrupt-sequence-review-">Interrupt Sequence (review)</h3>
+<ul>
+<li>Save a copy of the status register: (SR<sub>copy</sub>) &lt;- (SR)</li>
+<li>Set supervisor mode on (S=1 on SR)</li>
+<li>Set trace off (S=0 on SR)</li>
+<li>Determine vector number</li>
+<li>Save PC on supervisor stack</li>
+<li>Save SR<sub>copy</sub> on supervisor stack</li>
+<li>Vector address = vector address * 4</li>
+<li>(PC) &lt;- vector address (executes ISR)</li>
+</ul>
+<h3 id="interrupt-vector-vector-0-">Interrupt Vector (vector 0)</h3>
+<ul>
+<li>Vector 0 = reset (hard reset)</li>
+<li>2 longwords in vector table =&gt; no vector 1 (unlike everything else that is 1 longword)</li>
+<li>Typically in ROM or supervisor program sequence</li>
+<li>Used to load the system or do system memory</li>
+<li>Interrupt sequence is different from normal:<ul>
+<li>Interrupt mask on SR: I<sub>2</sub>, I<sub>1</sub>, I<sub>0</sub> &lt;- 111 (highest priority interrupt)</li>
+<li>Don&#39;t have SR or PC, cannot be trusted</li>
+<li>ISR is actually the powerup or startup code</li>
+</ul>
+</li>
+</ul>
+<h2 id="reentrant-code">Reentrant Code</h2>
+<ul>
+<li>A reentrant procedure can have several calls open to it at the same time<ul>
+<li>In an interrupt environment, different ISRs may call the same routine</li>
+<li>In a multitasking environment or multiuser or multithreaded environment, a single copy of a subroutine may be shared by more than one task/user/thread</li>
+</ul>
+</li>
+</ul>
+<h3 id="characteristics">Characteristics</h3>
+<p>Requirements for reentrant code:</p>
+<ol>
+<li>Any parameters or local variables must be on the stack frame (no global variables)</li>
+<li>Registers may be used for parameters and local variables, but must be saved on or restored from the stack at the beginning or end of the SR</li>
+<li>Guarantee that each call of the subroutine will create a separate stack frame to maintain data integrity</li>
+<li><p>No self-modifying code</p>
+</li>
+<li><p>Recursive code must be reentrant</p>
+</li>
+</ol>
+<p><strong>Example</strong> Recursion for 3!</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>main&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move.w&nbsp;&nbsp;&nbsp;&nbsp;number,D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;pass&nbsp;the&nbsp;number</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>jsr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;start&nbsp;recursive&nbsp;routine</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move.w&nbsp;&nbsp;&nbsp;&nbsp;D0,result&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;store&nbsp;factorial</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>stop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$2700</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>fact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A6,#-2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>move.w&nbsp;&nbsp;&nbsp;&nbsp;D0,-2(A6)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subq.w&nbsp;&nbsp;&nbsp;&nbsp;#1,D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>move.w&nbsp;&nbsp;&nbsp;&nbsp;-2(A6),D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fact</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>mulu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2(A6),D0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unlk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A6</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>rts</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main</span></span></span></div></pre><p><em>Note</em>: More complex example in her notes.</p>
+<h2 id="operation-of-the-assembler">Operation of the Assembler</h2>
+<p>Go here: <a href="http://web.wlu.ca/science/physcomp/nznotinas/cp216/lectures/20%20assembler.pdf">http://web.wlu.ca/science/physcomp/nznotinas/cp216/lectures/20%20assembler.pdf</a></p>
+<h2 id="machine-code">Machine Code</h2>
+<ul>
+<li>1 high level language instruction &gt;= 1 machine language instruction</li>
+<li>1 assembly language = 1 machine language instruction</li>
+</ul>
+<p><em>Note</em>: For 68000, 1 machine language instruction = 1-5 words</p>
+<p>Typically:</p>
+<ul>
+<li>Word 1<ul>
+<li>Operation code, size and type of operands</li>
+</ul>
+</li>
+</ul>
+<p>{Extension words}</p>
+<ul>
+<li>Words 2-3<ul>
+<li>Immediate operand (1-2 words if any)</li>
+<li>Source effective address (1-2 words if any)</li>
+</ul>
+</li>
+<li>Words 4-5 <ul>
+<li>Destination effective address (1-2 words if any)</li>
+</ul>
+</li>
+</ul>
+<p>Usually, the extension words are figured out by the programmer.</p></body>
 </html>
