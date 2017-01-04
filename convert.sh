@@ -4,11 +4,8 @@ cd notes/
 rm cp*.pdf
 cd ..
 
-texmacs -c ~/Dropbox\ \(Scott\)/CP315/cp315.tm ~/Dropbox\ \(Scott\)/CP315/cp315.pdf
-cp ~/Dropbox\ \(Scott\)/CP315/cp315.pdf ./notes/
+cp ~/Dropbox/cp400r/cp400r.pdf ./notes/
 
-texmacs -c ~/Dropbox\ \(Scott\)/CP331/cp331.tm ~/Dropbox\ \(Scott\)/CP331/cp331.pdf
-cp ~/Dropbox\ \(Scott\)/CP331/cp331.pdf ./notes/
+cp ~/Dropbox/cp373/cp373.pdf ./notes/
 
-texmacs -c ~/Dropbox\ \(Scott\)/CP363/cp363.tm ~/Dropbox\ \(Scott\)/CP363/cp363.pdf
-cp ~/Dropbox\ \(Scott\)/CP363/cp363.pdf ./notes/
+cp ~/Dropbox/cp414/cp414.pdf ./notes/
